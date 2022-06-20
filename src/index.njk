@@ -1,0 +1,19 @@
+---
+layout: 'layouts/default.njk'
+---
+
+<h2 class="mb-6 py-4 border(y-2 pri-800 opacity-20) text(pri-400 lg center) uppercase tracking-widest lg:(text-2xl)">Reunion Details</h2>
+
+{%- import 'components/deet-list.njk' as deetList -%}
+<ul>
+  {% for deet in collections.deet -%}
+    {{ deetList.deet(
+      deet.data.label,
+      deet.data.info,
+      deet.data.sub,
+      url=deet.data.url,
+      ico=deet.data.ico,
+      idx=loop
+    ) }}
+  {%- endfor %}
+</ul>

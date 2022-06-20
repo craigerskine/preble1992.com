@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" class="bg(pri-900 gradient-to-r) from-pri-900 to-pri-700 text-pri-800 md:(text-lg)" hidden>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>{% if title %}{{ title +' / '+ meta.title }}{% else %}{{ meta.title or meta.title }}{% endif %}</title>
+    <meta name="description" content="{{ meta.description }}" />
+    <meta name="author" content="{{ meta.author + ' - '+ meta.author_url }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400;700;900&display=swap" />
+  </head>
+  <body class="font-serif">
+
+    <div class="min-h-screen flex(& col)">
+      <header>
+        <div class="container mx-auto px-4"></div>
+      </header>
+      <main>
+        <section class="lg:(min-h-screen flex)">
+          <header class="lg:(w-1/2 flex) relative">
+            <figure class="bg(contain center no-repeat) absolute inset-16 opacity-10 filter blur-sm" style="background-image: url('/assets/img/bg-hornet.png');">
+              <figcaption class="sr-only">{{ meta.title }}</figcaption>
+            </figure>
+            <div class="m-auto py-12 px-4 max-w-3xl text-center relative">
+              <h1 class="bg(clip-text gradient-to-r) from-pri-100 to-sec-200 font-black text(5xl transparent) lg:(leading-none text-[calc(2.5vw+2.5vh+.5vmin)])">
+                Preble High
+                <i class="py-4 font-normal text(3xl pri-300) block lg:(text-[calc(1.33vw+1.33vh+.5vmin)])">Class of 1992</i>
+              </h1>
+              <p class="py-8 text-pri-500 flex items-center">
+                <b class="h-1 bg-current flex-1 opacity-30" aria-hidden="true"></b>
+                <strong class="mx-3 font-normal text-2xl uppercase tracking-widest lg:(text-3xl)">30<sup class="text-base normal-case">th</sup> reunion</strong>
+                <b class="h-1 bg-current flex-1 opacity-30" aria-hidden="true"></b>
+              </p>
+            </div>
+          </header>
+          <article class="bg-sec-50 lg:(w-1/2 flex) shadow-2xl">
+            <div class="m-auto py-12 px-4 w-full max-w-xl">
+              {{ content | safe }}
+            </div>
+          </article>
+        </section>
+        
+      </main>
+      <footer class="text-pri-600 lg:(w-1/2 fixed bottom-0 left-0)">
+        <div class="p-4 text(xs center) tracking-wider uppercase">
+          Made with
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" class="-mt-1 mx-1 fill-current text-red-400 inline-block">
+            <title>Love</title>
+            <polygon points="8 3 11 0 12 0 16 4 16 5 9 12 7 12 0 5 0 4 4 0 5 0" transform="translate(0,2)"></polygon>
+          </svg>
+          by
+          <a href="https://{{ meta.author_url }}/" class="group mx-1 text-sec-600 inline-flex flex-col motion-safe:(transition) hover:(text-sec-100)">
+            {{ meta.author }}
+            <b class="h-px w-full flex"><b class="w-0 bg-current motion-safe:(transition-all) group-hover:(w-full)"></b></b>
+          </a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="/assets/js/twind.js"></script>
+    <script src="https://kit.fontawesome.com/a2bf4ed495.js"></script>
+    <script>
+      twind.setup({
+        mode: "silent",
+        theme: {
+          extend: {
+            colors: {
+              pri: twindColors.green,
+              sec: twindColors.yellow,
+            },
+            fontFamily: (theme) => ({
+              serif: 'Roboto Slab,'+ theme('fontFamily.serif'),
+            }),
+          },
+        },
+        plugins: {
+          ...twindTypography(),
+          'scroll-smooth': { 'scroll-behavior': 'smooth' },
+        },
+      })
+      twind.tw(() => ({
+        '@global': {
+          '.prose h1,.prose h2,.prose h3': { '@apply': 'font-black' },
+          '.prose h4,.prose h5,.prose h6': { '@apply': 'font-bold' },
+          '.prose blockquote': { '@apply': 'border-l-4 font-semibold italic' },
+          '.prose ul': { '@apply': 'ml-4 list-disc' },
+          '.prose ol': { '@apply': 'ml-4 list-decimal' },
+          '.prose ul > li,.prose ol > li': { 'padding-left': '.25rem !important' },
+          '.prose ul > li::marker,.prose ol > li::marker': { '@apply': 'text-pri-900 text-opacity-50' },
+          '.prose table': { '@apply': 'w-full' },
+          '.prose table th': { '@apply': 'text-left' },
+          '.prose code': { '@apply': 'font-bold' },
+          '.prose pre': { '@apply': 'bg-gray-800 text-gray-100 overflow-x-auto' },
+          //':root [v-cloak]': { '@apply': 'hidden', },
+        }
+      }))
+      twindObserve.observe(document.documentElement);
+      document.documentElement.removeAttribute('hidden');
+    </script>
+
+  </body>
+</html>
