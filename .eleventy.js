@@ -1,6 +1,6 @@
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/_redirects");
-  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/_assets");
   return {
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
