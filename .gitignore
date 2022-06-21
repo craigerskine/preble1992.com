@@ -4,6 +4,4 @@
 _.nuxt/
 /node_modules
 /package-lock.json
-/_archive
-/_design
 /public
