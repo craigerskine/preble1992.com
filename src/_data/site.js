@@ -12,7 +12,7 @@ module.exports = {
       ico: 'facebook-f',
     },
     // {
-    //   title: 'PayPal',
+    //   title: 'Donate via PayPal',
     //   url: '#',
     //   ico: 'paypal',
     // },

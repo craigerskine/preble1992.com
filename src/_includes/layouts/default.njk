@@ -66,7 +66,7 @@
           </p>
           <ul class="flex justify-center space-x-5 lg:(text-xl)">
             {% for soc in site.social -%}
-              <li><a href="{{ soc.url }}" class="w-10 h-10 text-pri-500 flex rounded-full transition hover:(bg-pri-700 text-pri-50)"><i class="m-auto fa-brands fa-fw fa-{{ soc.ico }}"></i></a></li>
+              <li><a href="{{ soc.url }}" class="w-10 h-10 text-pri-500 flex rounded-full transition hover:(bg-pri-700 text-pri-50)"><i class="m-auto fa-brands fa-fw fa-{{ soc.ico }}" title="{{ soc.title }}"></i></a></li>
             {%- endfor %}
           </ul>
         </div>
