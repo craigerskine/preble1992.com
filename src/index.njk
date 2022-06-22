@@ -2,7 +2,11 @@
 layout: 'layouts/default.njk'
 ---
 
-<h2 class="mb-6 py-4 border(y-2 pri-800 opacity-20) text(pri-400 lg center) uppercase tracking-widest lg:(text-2xl)">Reunion Details</h2>
+<h2 class="py-8 text-pri-400 flex items-center">
+  <b class="h-[2px] bg-pri-800 flex-1 opacity-20" aria-hidden="true"></b>
+  <strong class="mx-3 font-normal text-2xl uppercase tracking-widest lg:(text-3xl)">30<sup class="text-base normal-case">th</sup> Reunion Details</strong>
+  <b class="h-[2px] bg-pri-800 flex-1 opacity-20" aria-hidden="true"></b>
+</h2>
 
 {%- import 'components/deet-list.njk' as deetList -%}
 <ul>

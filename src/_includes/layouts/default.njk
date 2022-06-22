@@ -59,12 +59,7 @@
             Preble High
             <i class="py-4 font-normal text(3xl pri-300) block lg:(text-[calc(1.33vw+1.33vh+.5vmin)])">Class of 1992</i>
           </h1>
-          <p class="py-8 text-pri-500 flex items-center">
-            <b class="h-1 bg-current flex-1 opacity-30" aria-hidden="true"></b>
-            <strong class="mx-3 font-normal text-2xl uppercase tracking-widest lg:(text-3xl)">30<sup class="text-base normal-case">th</sup> reunion</strong>
-            <b class="h-1 bg-current flex-1 opacity-30" aria-hidden="true"></b>
-          </p>
-          <ul class="flex justify-center space-x-5 lg:(text-xl)">
+          <ul class="py-6 flex justify-center space-x-5 lg:(text-xl)">
             {% for soc in site.social -%}
               <li><a href="{{ soc.url }}" class="w-10 h-10 text-pri-500 flex rounded-full transition hover:(bg-pri-700 text-pri-50)"><i class="m-auto fa-brands fa-fw fa-{{ soc.ico }}" title="{{ soc.title }}"></i></a></li>
             {%- endfor %}
