@@ -20,59 +20,60 @@
 
   </head>
   <body class="font-serif">
-
-    <div class="min-h-screen flex(& col)">
-      <header>
-        <div class="container mx-auto px-4"></div>
-      </header>
-      <main>
-        <section class="lg:(min-h-screen flex)">
-          <header class="pt-6 bg(cover center norepeat) relative lg:(pt-16 w-1/2 flex(& col))" style="background-image: url('/_assets/img/bg-hex.png')">
-            <a href="/" class="mx-auto w-1/2 max-w-sm self-center flex justify-center">
-              <figure class="w-full flex">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" class="m-auto w-full h-auto text-sec-300 stroke-current">
-                  <title>{{ meta.title }}</title>
-                  <g fill="none">
-                    <g class="opacity-50" stroke-linecap="round" stroke-linejoin="round" stroke-width="20" transform="translate(230 49)">
-                      <path d="m80 21.7377049 25-21.7377049 25 21.7377049v29.2622951h-50v29.2622951l25 21.7377049 25-21.7377049" />
-                      <path d="m50 51h-50v-29.2622951l25-21.7377049 25 21.7377049v58.5245902l-25 21.7377049-25-21.7377049" />
-                    </g>
-                    <g transform="translate(15 12)">
-                      <path d="m90 161-5 16-5-16z" class="fill-current" />
-                      <g stroke-linecap="round" stroke-linejoin="round" stroke-width="10">
-                        <path d="m66 125v24l19 13 19-13v-24l6-5v-24l-25 16-25-16v25l25 16 25-16" />
-                        <path d="m85 41 85 63v28l-17-13-8 7-60-59v-26l-85 63v28l18-13 8 7 59-59" />
-                        <path d="m57 59 3-28 25-24 25 24 3 28" />
-                      </g>
-                      <path d="m107 0-6.580645 16-5.419355-3.6z" class="fill-current" />
-                      <path d="m63 0 6.5806452 16 5.4193548-3.6z" class="fill-current" />
-                    </g>
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-[90px] h-screen fill-current text-sec-50 hidden fixed top-0 left-1/2 transform -translate-x-1/2 lg:(block)">
+      <defs>
+        <pattern id="hex" width="90" height="90" patternUnits="userSpaceOnUse">
+          <polygon points="60 90 0 90 0 75 30 60 30 30 0 15 0 0 60 0 60 15 90 30 90 60 60 75" />
+        </pattern>
+      </defs>
+      <rect fill="url(#hex)" x="0" y="0" width="100%" height="100%" />
+    </svg>
+    <div class="min-h-screen flex(& col) relative lg:(flex(wrap row))">
+      <header class="py-6 bg(cover center norepeat) relative lg:(py-24 w-1/2 flex(& col none))" style="background-image: url('/_assets/img/bg-hex.png')">
+        <a href="/" class="mx-auto w-1/2 max-w-sm self-center flex justify-center">
+          <figure class="w-full flex">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" class="m-auto w-full h-auto text-sec-300 stroke-current">
+              <title>{{ meta.title }}</title>
+              <g fill="none">
+                <g class="opacity-50" stroke-linecap="round" stroke-linejoin="round" stroke-width="20" transform="translate(230 49)">
+                  <path d="m80 21.7377049 25-21.7377049 25 21.7377049v29.2622951h-50v29.2622951l25 21.7377049 25-21.7377049" />
+                  <path d="m50 51h-50v-29.2622951l25-21.7377049 25 21.7377049v58.5245902l-25 21.7377049-25-21.7377049" />
+                </g>
+                <g transform="translate(15 12)">
+                  <path d="m90 161-5 16-5-16z" class="fill-current" />
+                  <g stroke-linecap="round" stroke-linejoin="round" stroke-width="10">
+                    <path d="m66 125v24l19 13 19-13v-24l6-5v-24l-25 16-25-16v25l25 16 25-16" />
+                    <path d="m85 41 85 63v28l-17-13-8 7-60-59v-26l-85 63v28l18-13 8 7 59-59" />
+                    <path d="m57 59 3-28 25-24 25 24 3 28" />
                   </g>
-                </svg>
-                <figcaption class="sr-only">{{ meta.title }}</figcaption>
-              </figure>
-              </a>
-            <div class="mx-auto py-12 px-4 max-w-3xl text-center relative">
-              <h1 class="bg(clip-text gradient-to-r) from-pri-100 to-sec-200 font-black text(5xl transparent) lg:(leading-none text-[calc(2.5vw+2.5vh+.5vmin)])">
-                Preble High
-                <i class="py-4 font-normal text(3xl pri-300) block lg:(text-[calc(1.33vw+1.33vh+.5vmin)])">Class of 1992</i>
-              </h1>
-              <p class="py-8 text-pri-500 flex items-center">
-                <b class="h-1 bg-current flex-1 opacity-30" aria-hidden="true"></b>
-                <strong class="mx-3 font-normal text-2xl uppercase tracking-widest lg:(text-3xl)">30<sup class="text-base normal-case">th</sup> reunion</strong>
-                <b class="h-1 bg-current flex-1 opacity-30" aria-hidden="true"></b>
-              </p>
-            </div>
-          </header>
-          <article class="bg-sec-50 lg:(w-1/2 flex) shadow-2xl">
-            <div class="m-auto py-12 px-4 w-full max-w-xl">
-              {{ content | safe }}
-            </div>
+                  <path d="m107 0-6.580645 16-5.419355-3.6z" class="fill-current" />
+                  <path d="m63 0 6.5806452 16 5.4193548-3.6z" class="fill-current" />
+                </g>
+              </g>
+            </svg>
+            <figcaption class="sr-only">{{ meta.title }}</figcaption>
+          </figure>
+        </a>
+        <div class="mx-auto px-4 max-w-3xl text-center relative lg:(py-12)">
+          <h1 class="bg(clip-text gradient-to-r) from-pri-100 to-sec-200 font-black text(5xl transparent) lg:(leading-none text-[calc(2.5vw+2.5vh+.5vmin)])">
+            Preble High
+            <i class="py-4 font-normal text(3xl pri-300) block lg:(text-[calc(1.33vw+1.33vh+.5vmin)])">Class of 1992</i>
+          </h1>
+          <p class="py-8 text-pri-500 flex items-center">
+            <b class="h-1 bg-current flex-1 opacity-30" aria-hidden="true"></b>
+            <strong class="mx-3 font-normal text-2xl uppercase tracking-widest lg:(text-3xl)">30<sup class="text-base normal-case">th</sup> reunion</strong>
+            <b class="h-1 bg-current flex-1 opacity-30" aria-hidden="true"></b>
+          </p>
+        </div>
+      </header>
+      <main class="h-full bg-sec-50 flex(& 1) lg:(w-1/2 h-auto)">
+        <section class="m-auto py-12 px-4 w-full max-w-xl">
+          <article>
+            {{ content | safe }}
           </article>
         </section>
-        
       </main>
-      <footer class="text-pri-600 lg:(w-1/2 fixed bottom-0 left-0)">
+      <footer class="mt-auto text-pri-600 flex-none lg:(w-1/2 fixed bottom-0 left-0)">
         <div class="p-4 text(xs center) tracking-wider uppercase">
           Designed and maintained with
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" class="-mt-1 mx-1 fill-current text-red-400 inline-block">
