@@ -6,10 +6,17 @@
     <title>{% if title %}{{ title +' / '+ meta.title }}{% else %}{{ meta.title or meta.title }}{% endif %}</title>
     <meta name="description" content="{{ meta.description }}" />
     <meta name="author" content="{{ meta.author + ' - '+ meta.author_url }}" />
+    <meta name="generator" content="{{ eleventy.generator }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400;700;900&display=swap" />
+
+    <meta property="og:title" content="{{ meta.title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://preble1992.com{{ page.url }}" />
+    <meta property="og:image" content="/_assets/img/og.png" />
+
   </head>
   <body class="font-serif">
 
@@ -23,7 +30,7 @@
             <a href="/" class="mx-auto w-1/2 max-w-sm self-center flex justify-center">
               <figure class="w-full flex">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" class="m-auto w-full h-auto text-sec-300 stroke-current">
-                  <title>Preble High Class of 1992</title>
+                  <title>{{ meta.title }}</title>
                   <g fill="none">
                     <g class="opacity-50" stroke-linecap="round" stroke-linejoin="round" stroke-width="20" transform="translate(230 49)">
                       <path d="m80 21.7377049 25-21.7377049 25 21.7377049v29.2622951h-50v29.2622951l25 21.7377049 25-21.7377049" />
