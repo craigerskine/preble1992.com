@@ -10,10 +10,10 @@
 - [x] Placeholder site
 - [x] Forward `info@...` email via [ImprovMX](https://improvmx.com/)
 - [x] Install [11ty](https://11ty.dev)
-- [ ] Setup donation system
-- [ ] Design new Hornet logo...
+- [x] Design new Hornet logo...
   - [ ] Setup store to sell new design (shirts/stickers/mugs/etc)
-- [ ] Create super cool web design
+- [ ] Setup donation system
+- [-] Create super cool web design
   - [ ] Layout
   - [ ] Home
   - [ ] Interior
@@ -24,6 +24,16 @@
 
 ---
 
-### Wishful thinking:
+### Wishful thinking?
 
 - [ ] Possible Netlify CMS?
+- [ ] Public yearbook
+  - [ ] Meta info (fun facts, where are they now, etc.)
+  - [ ] Gamification (badges/points applied to people that attend guitar night, etc.)
+
+### Sales model?
+
+- [ ] Installable package
+- [ ] Add-on for printable yearbooks
+- [ ] Add-on to sell merch
+- [ ] Add-on for reunions: Who's attending, who attended, etc.
