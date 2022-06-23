@@ -13,7 +13,7 @@
 - [x] Design new Hornet logo...
   - [ ] Setup store to sell new design (shirts/stickers/mugs/etc)
 - [ ] Setup donation system
-- [-] Create super cool web design
+- [ ] Create super cool web design
   - [ ] Layout
   - [ ] Home
   - [ ] Interior
