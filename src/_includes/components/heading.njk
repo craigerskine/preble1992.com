@@ -1,0 +1,9 @@
+{% macro heading(slot) %}
+  <h2 class="pt-8 pb-16 text-pri-400 flex items-center">
+    <b class="h-[2px] bg-pri-800 flex-1 opacity-20" aria-hidden="true"></b>
+    <strong class="mx-3 font-normal text-2xl uppercase tracking-widest lg:(text-3xl)">
+      {{ slot | safe }}
+    </strong>
+    <b class="h-[2px] bg-pri-800 flex-1 opacity-20" aria-hidden="true"></b>
+  </h2>
+{% endmacro %}
