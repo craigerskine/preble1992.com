@@ -6,27 +6,28 @@ pagination:
   size: 24
 ---
 
-{%- import 'components/heading.njk' as heading -%}
-{{ heading.heading("Yearbook") }}
+{% import 'components/h2.njk' as h2 %}
+{{ h2.h2("Yearbook") }}
 
 <ul class="grid(& cols-2) xl:(grid-cols-3) gap-12">
-  {% for person in pagination.items -%}
+  {% for person in pagination.items %}
     <li>
       <figure class="group flex(& col) items-center">
-        <img src="/_assets/img/people/{{ person.last | slugify }}-{{ person.first | slugify }}.jpg" alt="{{ person.first }} {{ person.last }}" class="w-24 h-24 ring(4 white) object-cover rounded-full shadow-xl transform motion-safe:(transition) group-hover:(scale-110)" />
+        <img src="/_assets/img/people/{{ person.last | slugify }}-{{ person.first | slugify }}.jpg?v={% version %}" alt="{{ person.first }} {{ person.last }}" class="w-24 h-24 ring(4 white) object-cover rounded-full shadow-xl transform motion-safe:(transition) group-hover:(scale-110)" />
         <figcaption class="text-center block">
           <strong class="pt-2 text-sm block">{{ person.first }} {{ person.last }}</strong>
           {% if person.email !== '' %}<a href="mailto:{{ person.email }}" class="text-gray-500 motion-safe:(transition) hover:(text-sec-500)"><i class="fa-light fa-fw fa-envelope"></i></a>{% endif %}
         </figcaption>
       </figure>
     </li>
-  {%- endfor %}
+  {% endfor %}
 </ul>
 
 <nav class="pt-12" aria-labelledby="yearbook-nav">
   <p id="yearbook-nav" class="sr-only">Yearbook navigation</p>
-  <ol class="text-3xl flex justify-center gap-x-6">
+  <ol class="text-3xl flex items-center justify-center gap-x-6">
     {% if pagination.href.previous %}<li><a href="{{ pagination.href.previous }}" title="Previous page"><i class="fa-light fa-fw fa-angle-left"></i></a></li>{% endif %}
+    <li class="text-sm opacity-50">{% if pagination.pageNumber %}{{ pagination.pageNumber }} of {% endif %}{{ pagination.pages.length }} pages</li>
     {% if pagination.href.next %}<li><a href="{{ pagination.href.next }}" title="Next page"><i class="fa-light fa-fw fa-angle-right"></i></a></li>{% endif %}
   </ol>
 </nav>

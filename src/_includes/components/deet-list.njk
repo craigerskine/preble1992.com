@@ -1,18 +1,14 @@
 {% macro deet(label, info, sub, url='#', ico='check', idx) %}
   <li>
-    <a href="{{ url }}" class="group py-5 flex relative motion-safe:(transition)"{% if idx.index === 1 %} download{% endif %}{% if idx.index === 3 %} onclick="window.open(this.href, '_blank', 'width=640,height=480,top=100,left=100,titlebar=no,toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes'); return false;"{% endif %}>
-      <strong class="pt-3 w-1/2 font-normal text(xs right) uppercase tracking-wider hidden sm:(block) lg:(text-sm)">{{ label }}:</strong>
-      <div class="mx-4 flex(& col) items-center lg:(mx-6)">
-        <b class="w-12 h-12 bg(pri-500 opacity-0) flex(& none) rounded-full motion-safe:(transition) group-hover:(bg-opacity-100 text-white)">
+    <a href="{{ url }}" class="group py-8 px-4 flex relative motion-safe:(transition)"{% if idx.index === 1 %} download{% endif %}{% if idx.index === 3 %} onclick="window.open(this.href, '_blank', 'width=640,height=480,top=100,left=100,titlebar=no,toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes'); return false;"{% endif %}>
+      <div class="w-full text-center flex(& col)">
+        <b class="m-auto w-16 h-16 bg(pri-500 opacity-0) flex(& none) rounded-full motion-safe:(transition) group-hover:(bg-opacity-100 text-white)">
           <i class="m-auto opacity-50 fa-thin fa-fw fa-2x fa-{{ ico }} group-hover:(opacity-100)"></i>
         </b>
-        <b class="my-2 w-[2px] h-full bg-current block opacity-20"></b>
-      </div>
-      <div class="w-full">
         <h3 class="py-2 font-bold text-base lg:(text-xl)">{{ info }}</h3>
         <p class="text-sm leading-loose block opacity-70">{{ sub | safe }}</p>
       </div>
-      <div class="bg(sec-400 opacity-20) absolute inset-0 z-10 opacity-0 rounded transform motion-safe:(transition) scale-100 group-hover:(opacity-100 scale-105 shadow-xl) lg:(group-hover:(scale-95))"></div>
+      <div class="bg(sec-400 opacity-20) absolute inset-0 z-10 opacity-0 motion-safe:(transition) group-hover:(opacity-100)"></div>
     </a>
   </li>
 {% endmacro %}

@@ -2,19 +2,113 @@
 layout: 'layouts/default.njk'
 ---
 
-{%- import 'components/heading.njk' as heading -%}
-{{ heading.heading('30<sup class="text-base normal-case">th</sup> Reunion Details') }}
+{% import 'components/h2.njk' as h2 %}
+{% import 'components/btn.njk' as btn %}
+{% import 'components/deet-list.njk' as deetList %}
 
-{%- import 'components/deet-list.njk' as deetList -%}
-<ul>
-  {% for deet in collections.deet -%}
-    {{ deetList.deet(
-      deet.data.label,
-      deet.data.info,
-      deet.data.sub,
-      url=deet.data.url,
-      ico=deet.data.ico,
-      idx=loop
-    ) }}
-  {%- endfor %}
-</ul>
+<section class="mx-auto px-4 max-w-2xl lg:(max-w-4xl px-12)">
+  <h1 class="py-12 bg-gradient-to-r from-pri-500 to-pri-900 text(5xl transparent) bg-clip-text tracking-tighter font-bold sm:(text-7xl)">
+    Preble High 30th reunion coming soon... it's rad
+  </h1>
+  <div class="pb-6 space-y-6 text-lg lg:(text-2xl leading-normal)">
+    <p>In a fantastical universe, centuries ago, Preble High School released unto the earth some of the most wonderful, talented, and amazing people. This site is here to honor them... and provide news & junk.</p>
+    <p>There's a 30th anniversary coming up! So let's have a reunion and party like it's 1992. Thankfully some very kind volunteers are hard at work getting a party ready just for you.</p>
+  </div>
+  <dl class="pt-6 grid grid-cols-2 gap-y-6 gap-x-10 sm:(gap-y-10 gap-x-16 text-center) lg:(auto-cols-auto grid-flow-col grid-cols-none justify-start text-left)">
+    {% for info in [
+      { label: 'Attending', value: 'Elliot?' },
+      { label: 'Date', value: '11/05/2022' },
+      { label: 'Venue', value: 'The Woods Golf Course' },
+      { label: 'Location', value: 'Green Bay, WI' }
+    ] %}
+      <div>
+        <dt class="text(sm pri-600) tracking-wider">{{ info.label }}</dt>
+        <dd class="text(lg pri-800) font-bold tracking-tight lg:(text-2xl)">{{ info.value }}</dd>
+      </div>
+    {% endfor %}
+  </dl>
+</section>
+<section>
+  <div class="h-40 bg-gradient-to-t from-white"></div>
+  <article class="px-4 bg-white">
+    <div class="mx-auto max-w-7xl">
+      <div class="mx-auto py-12 max-w-2xl lg:(mx-0)">
+        {{ h2.h2("Your classmates") }}
+        <p class="text-2xl leading-normal">Remember these goofy faces? Neither do we... mainly because most of the images are missing. Help us out and receive some FREE space bucks.</p>
+      </div>
+      <div class="pt-8 grid(& cols-1) items-start gap-y-8 gap-x-8 sm:(gap-y-16) lg:(pt-16 grid-cols-4)" x-data="{
+        eraTabActive: 1,
+        eraTabs: [
+          { era: 'Modern-ish', year: '2000\'s' },
+          { era: 'High School', year: '1990\'s' },
+          { era: 'Middle School', year: '1980\'s' },
+        ]
+      }">
+        <div class="pb-4 flex">
+          <ul class="w-full flex(& row) justify-center lg:(w-auto flex-col justify-start)" role="tablist">
+            <template x-for="(tab, index) in eraTabs">
+              <li>
+                <a href="#" class="group flex(& col) motion-safe:(transition) hover:(text-pri-600) lg:(flex-row)" :class="{ 'active text-sec-600': eraTabActive === index }" @click.prevent="eraTabActive = index">
+                  <div class="pb-4 flex(& row) items-center lg:(pb-0 flex-col)" aria-hidden="true">
+                    <div class="w-[9px] h-[9px] flex-none rounded-full relative z-10 motion-safe:(transition)" :class="eraTabActive === index ? 'bg-current ring-2 ring-white transform scale-150' : 'ring-1 ring-current'"></div>
+                    <div class="w-full h-px bg-gray-700 flex opacity-20 lg:(w-px h-full)">
+                      <template x-if="index === (eraTabs.length - 1)">
+                        <div class="w-full bg-gradient-to-l from-white lg:(bg-gradient-to-t)"></div>
+                      </template>
+                    </div>
+                  </div>
+                  <div class="pr-6 pb-12 sm:(pr-12) lg:(pr-0 pl-12)">
+                    <small class="-mt-[5px] leading-none text-xs block opacity-60 sm:(text-sm)" x-text="tab.era"></small>
+                    <strong class="py-2 text-xl block md:(text-3xl)" x-text="tab.year"></strong>
+                  </div>
+                </a>
+              </li>
+            </template>
+          </ul>
+        </div>
+        <div class="lg:(col-span-3)">
+          <ul class="grid(& cols-1) gap-x-8 gap-y-10 sm:(grid-cols-2 gap-y-16) md:(grid-cols-3)">
+            {% for person in people.slice(0, 6) %}
+              <li class="mx-auto max-w-xs">
+                <figure class="relative">
+                  <img src="/_assets/img/people/{{ person.last | slugify }}-{{ person.first | slugify }}.jpg?v={% version %}" alt="{{ person.first }} {{ person.last }} photo" class="object(center cover) rounded-xl md:(rounded-3xl)" />
+                  <figcaption class="pt-2 pl-4">
+                    <strong class="block md:(text-lg)">{{ person.first }} {{ person.last }}</strong>
+                    <small class="text-sm block opacity-60">Current Profession/Fun Fact</small>
+                    <div class="p-3 bg(sec-600) text(sm white center) absolute inset-x-4 -top-4 rounded-lg shadow-xl transform -rotate-3"
+                      x-text="eraTabActive === 0 ? 'Send us your photo...' :
+                      (eraTabActive === 1) ? 'Photo coming soon...' :
+                      'Photo coming soon... Adam?'"></div>
+                    <i class="fa-thin fa-fw fa-user-graduate text(9xl sec-200) absolute top-24 left-1/2 opacity-10 transform -translate-x-1/2 md:(text-[calc(6vw)])"></i>
+                  </figcaption>
+                </figure>
+              </li>
+            {% endfor %}
+          </ul>
+          <p class="py-12 text-center">{{ btn.btn('View all...', url='#') }}</p>
+        </div>
+      </div>
+    </div>
+  </article>
+  <div class="h-40 bg-gradient-to-b from-white"></div>
+</section>
+<section>
+  <div class="mx-auto px-4 max-w-7xl">
+    <div class="mx-auto pb-12 max-w-2xl lg:(mx-0 max-w-4xl pr-24)">
+      {{ h2.h2("The schedule is jam-packed with smart, creative, and evil activities") }}
+      <p class="text-2xl">The worst people from our school will be planning this... so don't get your hopes up. Either way though, it should be a fun time and you should really show up.</p>
+    </div>
+    <ul class="mx-auto max-w-md bg-white divide(y gray-500 opacity-20) overflow-hidden rounded-lg shadow">
+      {% for deet in collections.deet %}
+        {{ deetList.deet(
+          deet.data.label,
+          deet.data.info,
+          deet.data.sub,
+          url=deet.data.url,
+          ico=deet.data.ico,
+          idx=loop
+        ) }}
+      {% endfor %}
+    </ul>
+  </div>
+</section>

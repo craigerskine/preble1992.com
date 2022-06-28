@@ -5,11 +5,23 @@ module.exports = {
     author: 'Craig Erskine',
     author_url: 'craigerskine.com',
   },
+  reunion: [
+    {
+      anniversary: '30',
+      ordinal: 'th',
+      dateFull: '2022-11-05',
+      dateYear: '2022',
+      dateMonth: 'November',
+      dateDay: '5th',
+      time: '7',
+      location: 'Green Bay, WI',
+    }
+  ],
   social: [
     {
       title: 'Facebook',
       url: 'https://www.facebook.com/preblehigh92',
-      ico: 'facebook-f',
+      ico: 'facebook',
     },
     // {
     //   title: 'Donate via PayPal',

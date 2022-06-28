@@ -1,0 +1,19 @@
+{% macro logo(svg, logo, tag) %}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" fill="none" class="stroke-current {{ svg }}">
+  <title>{{ site.meta.title }}</title>
+  <g class="{{ logo }}" stroke-linecap="round" stroke-linejoin="round" stroke-width="20" transform="translate(230 49)">
+    <path d="m80 21.7377049 25-21.7377049 25 21.7377049v29.2622951h-50v29.2622951l25 21.7377049 25-21.7377049" />
+    <path d="m50 51h-50v-29.2622951l25-21.7377049 25 21.7377049v58.5245902l-25 21.7377049-25-21.7377049" />
+  </g>
+  <g class="fill-current {{ tag }}" transform="translate(15 12)">
+    <path d="m90 161-5 16-5-16z" />
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="10">
+      <path d="m66 125v24l19 13 19-13v-24l6-5v-24l-25 16-25-16v25l25 16 25-16" />
+      <path d="m85 41 85 63v28l-17-13-8 7-60-59v-26l-85 63v28l18-13 8 7 59-59" />
+      <path d="m57 59 3-28 25-24 25 24 3 28" />
+    </g>
+    <path d="m107 0-6.580645 16-5.419355-3.6z" />
+    <path d="m63 0 6.5806452 16 5.4193548-3.6z" />
+  </g>
+</svg>
+{% endmacro %}

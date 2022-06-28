@@ -1,0 +1,5 @@
+{% macro btn(url='#', slot) %}
+<a href="{{ url }}" class="py-3 px-4 bg-pri-600 text-white text-base inline-flex justify-center rounded-xl motion-safe:(transition) hover:(bg-pri-900)">
+  {{ slot }}
+</a>
+{% endmacro %}

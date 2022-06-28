@@ -1,0 +1,5 @@
+{% macro h2(slot) %}
+  <h2 class="mb-6 text(4xl pri-600) tracking-tighter sm:(text-5xl leading-tight)">
+    {{ slot | safe }}
+  </h2>
+{% endmacro %}
