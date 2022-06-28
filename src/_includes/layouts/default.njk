@@ -31,10 +31,10 @@
     <div class="min-h-screen flex(& col) relative">
       <header class="py-6 px-4 w-full flex-none relative lg:(py-10)">
         <div class="mx-auto max-w-7xl flex(& wrap) items-center justify-between lg:(flex-nowrap)">
-          <a href="/" class="block lg:(grow basis-0)">
+          <a href="/" class="group block transform motion-safe:(transition) hover:(-rotate-3) lg:(grow basis-0)">
             {{ logo.logo(
-              'm-auto w-auto h-10 text-sec-500 lg:(h-16)',
-              'text-pri-400',
+              'm-auto w-auto h-10 text-sec-500 motion-safe:(transition) group-hover:(text-sec-400) lg:(h-16)',
+              'text-pri-400 motion-safe:(transition) group-hover:(text-pri-600)',
               ''
             ) }}
           </a>
@@ -80,17 +80,16 @@
             <div class="w-1/2 bg(left no-repeat) absolute inset-y-0 right-0 opacity-30 filter blur-md" style="background-image: url('/_assets/img/bg-hornet.png')"></div>
           </div>
           <div class="mx-auto py-12 px-4 max-w-7xl text-center md:(flex items-center justify-between)">
-            <a href="/" class="inline-flex lg:(grow basis-0)">
+            <a href="/" class="group inline-flex transform motion-safe:(transition) hover:(-rotate-3) lg:(grow basis-0)">
               {{ logo.logo(
-                'm-auto w-auto h-10 text-sec-500 lg:(h-16)',
-                'text-pri-400',
+                'm-auto w-auto h-10 text-sec-500 motion-safe:(transition) group-hover:(text-sec-400) lg:(h-16)',
+                'text-pri-400 motion-safe:(transition) group-hover:(text-pri-600)',
                 ''
               ) }}
             </a>
             <div class="text-gray-500 md:(text-right)">
               &copy;<script>document.write(new Date().getFullYear())</script> &bull; Designed + maintained by<br />
-              <a href="https://{{ site.meta.author_url }}/"
-                class="group mx-1 text-sec-600 inline-flex flex-col motion-safe:(transition) hover:(text-sec-900)">
+              <a href="https://{{ site.meta.author_url }}/" class="group mx-1 text-sec-600 inline-flex flex-col motion-safe:(transition) hover:(text-sec-900)">
                 {{ site.meta.author }}
                 <b class="h-px w-full flex"><b class="w-0 bg-current motion-safe:(transition-all) group-hover:(w-full)"></b></b>
               </a>
