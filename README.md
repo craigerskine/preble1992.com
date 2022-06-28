@@ -11,16 +11,16 @@
 - [x] Forward `info@...` email via [ImprovMX](https://improvmx.com/)
 - [x] Install [11ty](https://11ty.dev)
 - [x] Design new Hornet logo...
-  - [ ] Setup store to sell new design (shirts/stickers/mugs/etc)
-- [ ] Setup donation system
-- [ ] Create super cool web design
-  - [ ] Layout
-  - [ ] Home
-  - [ ] Interior
-  - [ ] Error/404
+- [x] Create super cool web design
+  - [x] Layout
+  - [x] Home
+  - [x] Interior
+  - [x] Error/404
   - [ ] News/Events System
   - [ ] Photo gallery
     - [ ] Photos from the Kane's Shutterfly archive
+- [ ] Setup store to sell new design (shirts/stickers/mugs/etc)
+- [ ] Setup donation system
 
 ---
 
@@ -30,6 +30,8 @@
 - [ ] Public yearbook
   - [ ] Meta info (fun facts, where are they now, etc.)
   - [ ] Gamification (badges/points applied to people that attend guitar night, etc.)
+
+---
 
 ### Sales model?
 
