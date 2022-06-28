@@ -98,7 +98,7 @@ layout: 'layouts/default.njk'
       {{ h2.h2("The schedule is jam-packed with smart, creative, and evil activities") }}
       <p class="text-2xl">The worst people from our school will be planning this... so don't get your hopes up. Either way though, it should be a fun time and you should really show up.</p>
     </div>
-    <ul class="mx-auto max-w-md bg-white divide(y gray-500 opacity-20) overflow-hidden rounded-lg shadow">
+    <ul class="mx-auto max-w-md bg-white grid(& cols-1) divide(y gray-500 opacity-20) overflow-hidden rounded-lg shadow lg:(grid-cols-3 divide-x divide-y-0 max-w-none)">
       {% for deet in collections.deet %}
         {{ deetList.deet(
           deet.data.label,
