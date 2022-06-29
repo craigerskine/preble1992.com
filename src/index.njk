@@ -17,7 +17,7 @@ layout: 'layouts/default.njk'
   <dl class="pt-6 grid grid-cols-2 gap-y-6 gap-x-10 sm:(gap-y-10 gap-x-16 text-center) lg:(auto-cols-auto grid-flow-col grid-cols-none justify-start text-left)">
     {% for info in home.mast.details %}
       <div>
-        <dt class="text(sm pri-600) tracking-wider">{{ info.label }}</dt>
+        <dt class="text(sm pri-600) tracking-wide uppercase">{{ info.label }}</dt>
         <dd class="text(lg pri-800) font-bold tracking-tight lg:(text-2xl)">{{ info.value }}</dd>
       </div>
     {% endfor %}
