@@ -77,7 +77,7 @@ layout: 'layouts/default.njk'
                       x-text="eraTabActive === 0 ? 'Send us your photo...' :
                       (eraTabActive === 1) ? 'Photo coming soon...' :
                       'Photo coming soon... Adam?'"></div>
-                    <i class="fa-thin fa-fw fa-user-graduate text(9xl sec-200) absolute top-24 left-1/2 opacity-10 transform -translate-x-1/2 md:(text-[calc(6vw)])"></i>
+                    <i class="fa-thin fa-fw fa-user-graduate text(9xl sec-200) absolute top-24 left-1/2 opacity-20 transform -translate-x-1/2 md:(text-[calc(6vw)])"></i>
                   </figcaption>
                 </figure>
               </li>
@@ -97,13 +97,13 @@ layout: 'layouts/default.njk'
       <p class="text-2xl">{{ home.details.lead }}</p>
     </div>
     <ul class="mx-auto max-w-md bg-white grid(& cols-1) divide(y gray-500 opacity-20) overflow-hidden rounded-lg shadow lg:(grid-cols-3 divide-x divide-y-0 max-w-none)">
-      {% for deet in collections.deet %}
+      {% for detail in home.details.details %}
         {{ deetList.deet(
-          deet.data.label,
-          deet.data.info,
-          deet.data.sub,
-          url=deet.data.url,
-          ico=deet.data.ico,
+          detail.label,
+          detail.info,
+          detail.sub,
+          url=detail.url,
+          ico=detail.ico,
           idx=loop
         ) }}
       {% endfor %}
