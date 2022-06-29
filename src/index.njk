@@ -8,19 +8,14 @@ layout: 'layouts/default.njk'
 
 <section class="mx-auto px-4 max-w-2xl lg:(max-w-4xl px-12)">
   <h1 class="py-12 bg-gradient-to-r from-pri-500 to-pri-900 text(5xl transparent) bg-clip-text tracking-tighter font-bold sm:(text-7xl)">
-    Preble High 30th reunion coming soon... it's rad
+    {{ home.mast.heading }}
   </h1>
   <div class="pb-6 space-y-6 text-lg lg:(text-2xl leading-normal)">
-    <p>In a fantastical universe, centuries ago, Preble High School released unto the earth some of the most wonderful, talented, and amazing people. This site is here to honor them... and provide news & junk.</p>
-    <p>There's a 30th anniversary coming up! So let's have a reunion and party like it's 1992. Thankfully some very kind volunteers are hard at work getting a party ready just for you.</p>
+    <p>{{ home.mast.lead }}</p>
+    <p>{{ home.mast.content }}</p>
   </div>
   <dl class="pt-6 grid grid-cols-2 gap-y-6 gap-x-10 sm:(gap-y-10 gap-x-16 text-center) lg:(auto-cols-auto grid-flow-col grid-cols-none justify-start text-left)">
-    {% for info in [
-      { label: 'Attending', value: 'Elliot?' },
-      { label: 'Date', value: '11/05/2022' },
-      { label: 'Venue', value: 'The Woods Golf Course' },
-      { label: 'Location', value: 'Green Bay, WI' }
-    ] %}
+    {% for info in home.mast.details %}
       <div>
         <dt class="text(sm pri-600) tracking-wider">{{ info.label }}</dt>
         <dd class="text(lg pri-800) font-bold tracking-tight lg:(text-2xl)">{{ info.value }}</dd>
@@ -29,21 +24,24 @@ layout: 'layouts/default.njk'
   </dl>
 </section>
 <section>
-  <div class="h-40 bg-gradient-to-t from-white"></div>
+  <div class="mast-fade h-40 bg-gradient-to-t from-white"></div>
   <article class="px-4 bg-white">
     <div class="mx-auto max-w-7xl">
       <div class="mx-auto py-12 max-w-2xl lg:(mx-0)">
-        {{ h2.h2("Your classmates") }}
-        <p class="text-2xl leading-normal">Remember these goofy faces? Neither do we... mainly because most of the photos are missing. Help us out and receive some FREE space bucks.</p>
+        {{ h2.h2(home.classmates.heading) }}
+        <p class="text-2xl leading-normal">
+          {{ home.classmates.lead }}
+        </p>
       </div>
-      <div class="pt-8 grid(& cols-1) items-start gap-y-8 gap-x-8 sm:(gap-y-16) lg:(pt-16 grid-cols-4)" x-data="{
-        eraTabActive: 1,
-        eraTabs: [
-          { era: 'Modern-ish', year: '2000\'s' },
-          { era: 'High School', year: '1990\'s' },
-          { era: 'Middle School', year: '1980\'s' },
-        ]
-      }">
+      <div class="pt-8 grid(& cols-1) items-start gap-y-8 gap-x-8 sm:(gap-y-16) lg:(pt-16 grid-cols-4)"
+        x-data="{
+          eraTabActive: 1,
+          eraTabs: [
+            { era: 'Modern-ish', year: '2000\'s' },
+            { era: 'High School', year: '1990\'s' },
+            { era: 'Middle School', year: '1980\'s' },
+          ]
+        }">
         <div class="pb-4 flex">
           <ul class="w-full flex(& row) justify-center lg:(w-auto flex-col justify-start)" role="tablist">
             <template x-for="(tab, index) in eraTabs">
@@ -85,18 +83,18 @@ layout: 'layouts/default.njk'
               </li>
             {% endfor %}
           </ul>
-          <p class="py-12 text-center">{{ btn.btn('View all...', url='#') }}</p>
+          <p class="py-12 text-center">{{ btn.btn(home.classmates.action, url='#', class='pointer-events-none', prevent='true') }}</p>
         </div>
       </div>
     </div>
   </article>
-  <div class="h-40 bg-gradient-to-b from-white"></div>
 </section>
-<section>
-  <div class="mx-auto px-4 max-w-7xl">
+<section class="bg-pri-200 relative">
+  <div class="mast-fade h-40 bg-gradient-to-b from-white"></div>
+  <div class="mx-auto px-4 max-w-7xl relative">
     <div class="mx-auto pb-12 max-w-2xl lg:(mx-0 max-w-4xl pr-24)">
-      {{ h2.h2("The schedule is jam-packed with smart, creative, and evil activities") }}
-      <p class="text-2xl">The worst people from our school will be planning this... so don't get your hopes up. Either way though, it should be a fun time and you should really show up.</p>
+      {{ h2.h2(home.details.heading) }}
+      <p class="text-2xl">{{ home.details.lead }}</p>
     </div>
     <ul class="mx-auto max-w-md bg-white grid(& cols-1) divide(y gray-500 opacity-20) overflow-hidden rounded-lg shadow lg:(grid-cols-3 divide-x divide-y-0 max-w-none)">
       {% for deet in collections.deet %}
@@ -111,4 +109,5 @@ layout: 'layouts/default.njk'
       {% endfor %}
     </ul>
   </div>
+  <div class="mast-fade h-40 bg-gradient-to-t from-white"></div>
 </section>

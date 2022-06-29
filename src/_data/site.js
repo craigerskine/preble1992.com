@@ -5,6 +5,9 @@ module.exports = {
     author: 'Craig Erskine',
     author_url: 'craigerskine.com',
   },
+  nav: {
+    action: 'School spirit',
+  },
   reunion: [
     {
       anniversary: '30',
@@ -17,6 +20,12 @@ module.exports = {
       location: 'Green Bay, WI',
     }
   ],
+  newsletter: {
+    heading: 'Stay up to date',
+    lead: 'Get updates on all of our events and be the first to get notified when things start to pop off... like when Elliot learns a new chord.',
+    placeholder: 'Email (coming soon)',
+    action: 'Sign up',
+  },
   social: [
     {
       title: 'Facebook',

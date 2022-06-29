@@ -50,7 +50,7 @@
             {% endfor %}
           </div>
           <div class="flex items-center space-x-8 lg:(grow basis-0 justify-end)">
-            {{ btn.btn('School spirit') }}
+            {{ btn.btn(site.nav.action, class='pointer-events-none', prevent='true') }}
           </div>
         </div>
       </header>
@@ -58,19 +58,19 @@
         {{ content | safe }}
       </main>
       <footer class="mt-auto w-full flex-none">
-        <div class="h-40 bg-gradient-to-t from-white"></div>
         <div class="py-4 px-4 bg-white">
           <div class="-mx-4 py-20 px-4 max-w-7xl bg(pri-300 gradient-to-r) from-pri-100 relative overflow-hidden sm:(px-6) md:(mx-auto rounded-3xl px-16) xl:(px-24 py-36)">
             <div class="mx-auto max-w-2xl grid(& grid-cols-1) gap-x-32 gap-y-14 relative xl:(max-w-none grid-cols-2)">
               <div class="text-pri-700 space-y-4">
-                <strong class="text(4xl pri-900) tracking-tighter font-medium block sm:(text-5xl)">Stay up to date <small class="text-base tracking-normal inline-flex opacity-50">... coming soon</small></strong>
-                <p class="text-lg tracking-tight">Get updates on all of our events and be the first to get notified when things start to pop off... like when Elliot learns a new chord.</p>
+                <strong class="text(4xl pri-900) tracking-tighter font-medium block sm:(text-5xl)">{{ site.newsletter.heading }} <small class="text-base tracking-normal inline-flex opacity-50">... coming soon</small></strong>
+                <p class="text-lg tracking-tight">{{ site.newsletter.lead }}</p>
               </div>
               <form class="flex items-center opacity-50">
                 <div class="py-2.5 pr-2.5 w-full flex bg-white relative rounded-xl shadow-xl motion-safe:(transition) focus-within:(ring(2 pri-900)">
                   <label for="form-newsletter-signup" class="sr-only">Email</label>
-                  <input type="email" id="form-newsletter-signup" placeholder="Email (coming soon...)" class="-my-2.5 flex-auto bg-transparent pl-6 pr-2.5 focus:outline-none" required disabled />
-                  <button class="inline-flex justify-center rounded-xl bg-pri-600 p-4 text-white font-semibold motion-safe:(transition) focus:(outline-none) disabled:(pointer-events-none)" type="submit" disabled>Sign up</button>
+                  <input type="email" id="form-newsletter-signup" placeholder="{{ site.newsletter.placeholder }}" class="-my-2.5 flex-auto bg-transparent pl-6 pr-2.5 focus:outline-none" required disabled />
+                  {{ btn.btn(site.newsletter.action, as='button', class='pointer-events-none', prevent='true') }}
+                  <!-- <button class="inline-flex justify-center rounded-xl bg-pri-600 p-4 text-white font-semibold motion-safe:(transition) focus:(outline-none) disabled:(pointer-events-none)" type="submit" disabled>{{ site.newsletter.action }}</button> -->
                 </div>
               </form>
             </div>
