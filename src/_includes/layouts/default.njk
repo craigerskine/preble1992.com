@@ -21,6 +21,7 @@
 
     {% import 'components/logo.njk' as logo %}
     {% import 'components/btn.njk' as btn %}
+    {% import 'components/div.njk' as div %}
 
   </head>
 
@@ -58,7 +59,7 @@
         {{ content | safe }}
       </main>
       <footer class="mt-auto w-full flex-none">
-        <div class="py-4 px-4 bg-white">
+        <div class="py-4 px-4 bg-white lg:(pt-24)">
           <div class="-mx-4 py-20 px-4 max-w-7xl bg(pri-300 gradient-to-r) from-pri-100 relative overflow-hidden sm:(px-6) md:(mx-auto rounded-3xl px-16) xl:(px-24 py-36)">
             <div class="mx-auto max-w-2xl grid(& grid-cols-1) gap-x-32 gap-y-14 relative xl:(max-w-none grid-cols-2)">
               <div class="text-pri-700 space-y-4">

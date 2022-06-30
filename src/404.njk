@@ -3,7 +3,14 @@ title: '404'
 layout: 'layouts/default.njk'
 ---
 
-<a href="/" class="my-8 mx-auto px-4 text-pri-700 text(4xl center) leading-relaxed font-black block lg:(my-16 text-[calc(2vw+2vh)])">
-  Oops <i class="mx-1 font-thin inline-block opacity-20">/</i> 404
-  <small class="text-lg font-normal block opacity-70 lg:(text-2xl)">Adam, is that you? So sassy!</small>
-</a>
+{% import 'components/div.njk' as div %}
+
+<section>
+  <div class="text-white">{{ div.div() }}</div>
+  <article class="bg-white">
+    <a href="/" class="mx-auto py-8 px-4 text-pri-700 text(4xl center) leading-relaxed font-black block lg:(py-16 text-[calc(2vw+2vh)])">
+      Oops <i class="mx-1 font-thin inline-block opacity-20">/</i> 404
+      <small class="text-lg font-normal block opacity-70 lg:(text-2xl)">Adam, is that you? So sassy!</small>
+    </a>
+  </article>
+</section>
