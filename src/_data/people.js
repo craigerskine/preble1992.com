@@ -1341,7 +1341,7 @@ module.exports = [
     middle: "M.",
     married: "",
     nickname: "",
-    meta: "Evil 1%-er",
+    meta: "Vampire (not the sparkly kind)",
     email: "",
     allowed: true
   },
