@@ -1,5 +1,5 @@
 {% macro btn(as='a', url='#', slot, class='', prevent='') %}
-<{{ as }}{% if as === 'button' %} type="button" {% else %} href="{{ url }}" {% endif %} {% if prevent !== '' %} @click.prevent {% endif %} class="{{ class }} py-3 px-4 bg-pri-600 text-white text-base inline-flex justify-center rounded-xl motion-safe:(transition) hover:(bg-pri-900)">
+<{{ as }}{% if as === 'button' %} type="button" {% else %} href="{{ url }}" {% endif %} {% if prevent !== '' %} @click.prevent {% endif %} class="{{ class }} {% if prevent !== '' %} opacity-30 {% endif %} py-3 px-4 bg-pri-600 text-white text-base inline-flex justify-center rounded-xl motion-safe:(transition) hover:(bg-pri-900)">
   {{ slot }}
 </{{ as }}>
 {% endmacro %}

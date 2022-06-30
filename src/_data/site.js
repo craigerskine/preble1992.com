@@ -4,6 +4,7 @@ module.exports = {
     description: 'Preble High School class of 1992 reunion information',
     author: 'Craig Erskine',
     author_url: 'craigerskine.com',
+    footer: 'Logo + Website + Maintenance',
   },
   nav: {
     action: 'School spirit',
