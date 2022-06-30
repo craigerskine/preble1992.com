@@ -36,7 +36,7 @@ layout: 'layouts/default.njk'
       </div>
       <div class="pt-8 grid(& cols-1) items-start gap-y-8 gap-x-8 sm:(gap-y-16) lg:(pt-16 grid-cols-4)"
         x-data="{{ home.classmatesNav | dump }}">
-        <div class="pb-4 w-full flex">
+        <div class="w-full flex">
           <ul class="w-full flex(& row) justify-center lg:(pr-8 flex-col justify-start)" role="tablist">
             <template x-for="(tab, index) in eraTabs">
               <li>
@@ -49,7 +49,7 @@ layout: 'layouts/default.njk'
                       </template>
                     </div>
                   </div>
-                  <div class="timeline pr-12 pb-6 lg:(pr-16 pl-0 text-right)">
+                  <div class="timeline pr-12 lg:(pb-12 pr-16 pl-0 text-right)">
                     <small class="-mt-[5px] leading-none text-xs block opacity-60 sm:(text-sm)" x-text="tab.era"></small>
                     <strong class="py-2 text-xl block md:(text-3xl)" x-text="tab.year"></strong>
                   </div>
