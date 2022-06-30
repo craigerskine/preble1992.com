@@ -15,6 +15,14 @@ module.exports = {
     lead: 'Remember these goofy faces? Neither do we... mainly because most of the photos are missing. Help us out and receive some FREE space bucks.',
     action: 'View all',
   },
+  classmatesNav: {
+    eraTabActive: 1,
+    eraTabs: [
+      { era: 'Modern-ish', year: '2000\'s' },
+      { era: 'High School', year: '1990\'s' },
+      { era: 'Middle School', year: '1980\'s' },
+    ],
+  },
   details: {
     heading: 'The schedule is jam-packed with smart, creative, and evil activities',
     lead: 'The worst people from our school will be planning this... so don\'t get your hopes up. Either way though, it should be a fun time and you should really show up.',

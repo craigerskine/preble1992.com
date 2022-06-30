@@ -35,20 +35,13 @@ layout: 'layouts/default.njk'
         </p>
       </div>
       <div class="pt-8 grid(& cols-1) items-start gap-y-8 gap-x-8 sm:(gap-y-16) lg:(pt-16 grid-cols-4)"
-        x-data="{
-          eraTabActive: 1,
-          eraTabs: [
-            { era: 'Modern-ish', year: '2000\'s' },
-            { era: 'High School', year: '1990\'s' },
-            { era: 'Middle School', year: '1980\'s' },
-          ]
-        }">
-        <div class="pb-4 flex">
-          <ul class="w-full flex(& row) justify-center lg:(w-auto flex-col justify-start)" role="tablist">
+        x-data="{{ home.classmatesNav | dump }}">
+        <div class="pb-4 w-full flex">
+          <ul class="w-full flex(& row) justify-center lg:(pr-8 flex-col justify-start)" role="tablist">
             <template x-for="(tab, index) in eraTabs">
               <li>
-                <a href="#" class="group flex(& col) motion-safe:(transition) hover:(text-pri-600) lg:(flex-row)" :class="{ 'active text-sec-600': eraTabActive === index }" @click.prevent="eraTabActive = index">
-                  <div class="pb-4 flex(& row) items-center lg:(pb-0 flex-col)" aria-hidden="true">
+                <a href="#" class="group flex(& col) motion-safe:(transition) hover:(text-pri-600) lg:(flex-row flex-row-reverse)" :class="{ 'active text-sec-600': eraTabActive === index }" @click.prevent="eraTabActive = index">
+                  <div class="timeline-ui pb-4 flex(& row) items-center lg:(pb-0 flex-col)" aria-hidden="true">
                     <div class="w-[9px] h-[9px] flex-none rounded-full relative z-10 motion-safe:(transition)" :class="eraTabActive === index ? 'bg-current ring-2 ring-white transform scale-150' : 'ring-1 ring-current'"></div>
                     <div class="w-full h-px bg-gray-700 flex opacity-20 lg:(w-px h-full)">
                       <template x-if="index === (eraTabs.length - 1)">
@@ -56,7 +49,7 @@ layout: 'layouts/default.njk'
                       </template>
                     </div>
                   </div>
-                  <div class="pr-6 pb-12 sm:(pr-12) lg:(pr-0 pl-12)">
+                  <div class="timeline pr-12 pb-6 lg:(pr-16 pl-0 text-right)">
                     <small class="-mt-[5px] leading-none text-xs block opacity-60 sm:(text-sm)" x-text="tab.era"></small>
                     <strong class="py-2 text-xl block md:(text-3xl)" x-text="tab.year"></strong>
                   </div>
