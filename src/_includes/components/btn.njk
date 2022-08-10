@@ -1,4 +1,4 @@
-{% macro btn(as='a', url='#', slot, class='', outline='', prevent='') %}
+{% macro x(as='a', url='#', slot, ico='', class='', outline='', prevent='') %}
 <{{ as }}
   {% if as === 'button' %}
     type="button"
@@ -15,8 +15,9 @@
       {% else %}
         bg-pri-600 text-white hover:(bg-pri-900) 
       {% endif %}
-      py-3 px-4 text-base inline-flex justify-center rounded-xl motion-safe:(transition) 
+      py-3 px-4 text-base inline-flex items-center justify-center gap-2 rounded-xl motion-safe:(transition) 
     ">
+    {%- if ico !== '' %}<i class="{{ ico }}"></i>{%- endif %}
   {{ slot }}
 </{{ as }}>
 {% endmacro %}

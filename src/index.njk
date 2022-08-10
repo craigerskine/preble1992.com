@@ -26,11 +26,11 @@ layout: 'layouts/default.njk'
   {% endfor %}
 </section>
 <section>
-  <div class="section-div text-white">{{ div.div(dir='t') }}</div>
+  <div class="section-div text-white">{{ div.x(dir='t') }}</div>
   <article class="px-4 bg-white">
     <div class="mx-auto max-w-7xl">
       <div class="mx-auto py-12 max-w-2xl lg:(mx-0)">
-        {{ h2.h2(home.classmates.heading) }}
+        {{ h2.x(home.classmates.heading) }}
         <p class="text-2xl leading-normal">
           {{ home.classmates.lead }}
         </p>
@@ -80,17 +80,17 @@ layout: 'layouts/default.njk'
               {% endif %}
             {% endfor %}
           </ul>
-          <p class="py-12 text-center">{{ btn.btn(home.classmates.action, url='#', class='pointer-events-none', outline='true', prevent='true') }}</p>
+          <p class="py-12 text-center">{{ btn.x(home.classmates.action, url='#', class='pointer-events-none', outline='true', prevent='true') }}</p>
         </div>
       </div>
     </div>
   </article>
 </section>
 <section class="bg-pri-300 relative">
-  <div class="section-div text-white">{{ div.div(dir='b') }}</div>
+  <div class="section-div text-white">{{ div.x(dir='b') }}</div>
   <div class="mx-auto py-8 px-4 max-w-7xl relative lg:(py-32)">
     <div class="mx-auto pb-12 max-w-2xl lg:(mx-0 max-w-4xl pr-24)">
-      {{ h2.h2(home.details.heading) }}
+      {{ h2.x(home.details.heading) }}
       <p class="text(2xl)">{{ home.details.lead }}</p>
     </div>
     <ul class="mx-auto max-w-md bg-white grid(& cols-1) divide(y gray-500 opacity-20) overflow-hidden rounded-lg shadow lg:(grid-cols-3 divide-x divide-y-0 max-w-none)">
@@ -106,5 +106,5 @@ layout: 'layouts/default.njk'
       {% endfor %}
     </ul>
   </div>
-  <div class="section-div text-white">{{ div.div(dir='t') }}</div>
+  <div class="section-div text-white">{{ div.x(dir='t') }}</div>
 </section>
