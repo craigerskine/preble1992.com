@@ -25,16 +25,21 @@ layout: 'layouts/default.njk'
       class="mx-auto"
     ></iframe>
       <hr class="my-12" />
+      <div class="mx-auto py-12 max-w-2xl lg:(mx-0)">
+        <p class="pb-8 text-xl leading-normal">Pick up some cool merch made with our custom reunion logo. Again, all profits goes to current and future reunion expenses.</p>
+      </div>
       <div class="flex(& wrap)">
         {% for item in merch.items %}
-          <a href="{{ item.url }}" class="mx-auto sm:(w-1/2) md:(w-1/3)">
+          <a href="{{ item.url }}" class="mx-auto w-1/3">
             <figure class="p-4">
               <img src="/_assets/img/spirit/{{ item.img }}" alt="{{ item.title }} merch item" class="rounded-lg" />
-              <figcaption class="text-center">{{ item.title }}</figcaption>
+              <figcaption class="pt-1 text-center">{{ item.title }}</figcaption>
             </figure>
           </a>
         {% endfor %}
-        {{ btn.x('More...', url='https://teepublic.com/user/qrayg', class='mt-10 mx-auto', outline=true) }}
+        <div class="pt-10 w-full text-center">
+          {{ btn.x('More...', url='https://teepublic.com/user/qrayg', outline=true) }}
+        </div>
       </div>
     </div>
   </article>

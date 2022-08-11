@@ -1,4 +1,4 @@
-{% macro x(as='a', url='#', slot, ico='', class='', outline='', prevent='') %}
+{% macro x(as='a', url='#', slot, sub='', ico='', class='', outline='', prevent='') %}
 <{{ as }}
   {% if as === 'button' %}
     type="button"
@@ -15,9 +15,12 @@
       {% else %}
         bg-pri-600 text-white hover:(bg-pri-900) 
       {% endif %}
-      py-3 px-4 text-base inline-flex items-center justify-center gap-2 rounded-xl motion-safe:(transition) 
+      py-3 px-4 text-sm inline-flex items-center justify-center gap-2 rounded-xl motion-safe:(transition) md:(text-base) 
     ">
-    {%- if ico !== '' %}<i class="{{ ico }}"></i>{%- endif %}
-  {{ slot }}
+  {%- if ico !== '' %}<i class="{{ ico }}"></i>{%- endif %}
+  <span>
+    {{ slot }}
+    {%- if sub !== '' %}<small class="pt-px text-xs font-semibold block opacity-70">{{ sub }}</small>{%- endif %}
+  </span>
 </{{ as }}>
 {% endmacro %}
