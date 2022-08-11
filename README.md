@@ -11,6 +11,8 @@
 - [x] Forward `info@...` email via [ImprovMX](https://improvmx.com/)
 - [x] Install [11ty](https://11ty.dev)
 - [x] Design new Hornet logo...
+- [x] Setup store to sell new design (shirts/stickers/mugs/etc)
+- [x] Setup donation system
 - [x] Create super cool web design
   - [x] Layout
   - [x] Home
@@ -19,8 +21,6 @@
   - [ ] News/Events System
   - [ ] Photo gallery
     - [ ] Photos from the Kane's Shutterfly archive
-- [ ] Setup store to sell new design (shirts/stickers/mugs/etc)
-- [ ] Setup donation system
 
 ---
 

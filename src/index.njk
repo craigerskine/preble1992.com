@@ -18,10 +18,10 @@ layout: 'layouts/default.njk'
   </div>
   {% for info in site.reunion.slice(0, 1) %}
     <dl class="pt-6 pb-24 grid grid-cols-2 gap-y-6 gap-x-10 sm:(gap-y-10 gap-x-16 text-center) lg:(auto-cols-auto grid-flow-col grid-cols-none justify-start text-left)">
-      {{ mastDetails.details(label='Attending', value=info.attending) }}
-      {{ mastDetails.details(label='Date', value=info.date) }}
-      {{ mastDetails.details(label='Venue', value=info.venue) }}
-      {{ mastDetails.details(label='Location', value=info.location) }}
+      {{ mastDetails.x(label='Attending', value=info.attending) }}
+      {{ mastDetails.x(label='Date', value=info.date) }}
+      {{ mastDetails.x(label='Venue', value=info.venue) }}
+      {{ mastDetails.x(label='Location', value=info.location) }}
     </dl>
   {% endfor %}
 </section>
@@ -93,9 +93,9 @@ layout: 'layouts/default.njk'
       {{ h2.x(home.details.heading) }}
       <p class="text(2xl)">{{ home.details.lead }}</p>
     </div>
-    <ul class="mx-auto max-w-md bg-white grid(& cols-1) divide(y gray-500 opacity-20) overflow-hidden rounded-lg shadow lg:(grid-cols-3 divide-x divide-y-0 max-w-none)">
+    <ul class="mx-auto max-w-md bg-white grid(& cols-1) divide(y gray-500 opacity-20) overflow-hidden rounded-3xl shadow lg:(grid-cols-3 divide-x divide-y-0 max-w-none)">
       {% for detail in home.details.details %}
-        {{ deetList.deet(
+        {{ deetList.x(
           detail.label,
           detail.info,
           detail.sub,
