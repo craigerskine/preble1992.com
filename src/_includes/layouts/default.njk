@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" />
 
-    <meta property="og:title" content="{{ site.meta.title }}" />
+    <meta property="og:title" content="{% if title %}{{ title +' / '+ site.meta.title }}{% else %}{{ site.meta.title or site.meta.title }}{% endif %}" />
     <meta property="og:description" content="{{ site.meta.description }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://preble1992.com{{ page.url }}" />
