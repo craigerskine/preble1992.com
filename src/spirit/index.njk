@@ -13,20 +13,29 @@ layout: 'layouts/default.njk'
     <div class="mx-auto max-w-7xl">
       <div class="mx-auto py-12 max-w-2xl lg:(mx-0)">
         {{ h2.x("School Spirit") }}
-        <p class="text-2xl leading-normal">Help support the people that organize the reunions and the dude that built this site with his bare hands.</p>
+        <p class="text-2xl leading-normal">Help support the people that organize the reunions and the dude that built this site with his bare hands. ALL of the profits goes to expenses from the reunion!</p>
       </div>
+      <iframe
+      src="https://www.paypal.com/giving/campaigns?campaign_id=PRVD8RKMP76L8"
+      title="PayPal donate campaign card"
+      frameborder="0"
+      width="300"
+      height="420"
+      scrolling="no"
+      class="mx-auto"
+    ></iframe>
+      <hr class="my-12" />
       <div class="flex(& wrap)">
         {% for item in merch.items %}
-          <a href="https://www.teepublic.com/t-shirt/34031441-preble-92" class="mx-auto sm:(w-1/2) md:(w-1/3)">
+          <a href="{{ item.url }}" class="mx-auto sm:(w-1/2) md:(w-1/3)">
             <figure class="p-4">
               <img src="/_assets/img/spirit/{{ item.img }}" alt="{{ item.title }} merch item" class="rounded-lg" />
               <figcaption class="text-center">{{ item.title }}</figcaption>
             </figure>
           </a>
         {% endfor %}
+        {{ btn.x('More...', url='https://teepublic.com/user/qrayg', class='mt-10 mx-auto', outline=true) }}
       </div>
-      <hr class="my-12" />
-      <p class="text-center">{{ btn.x('Donate', ico='fa-brands fa-paypal', url='https://paypal.me/qrayg') }}</p>
     </div>
   </article>
 </section>
