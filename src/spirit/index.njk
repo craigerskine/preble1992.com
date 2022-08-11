@@ -12,8 +12,8 @@ layout: 'layouts/default.njk'
   <article class="px-4 bg-white">
     <div class="mx-auto max-w-7xl">
       <div class="mx-auto py-12 max-w-2xl lg:(mx-0)">
-        {{ h2.x("School Spirit") }}
-        <p class="text-2xl leading-normal">Help support the people that organize the reunions and the dude that built this site with his bare hands. ALL of the profits goes to expenses from the reunion!</p>
+        {{ h2.x(spirit.donate.heading) }}
+        <p class="text-2xl leading-normal">{{ spirit.donate.lead }}</p>
       </div>
       <iframe
       src="https://www.paypal.com/giving/campaigns?campaign_id=PRVD8RKMP76L8"
@@ -26,10 +26,11 @@ layout: 'layouts/default.njk'
     ></iframe>
       <hr class="my-12" />
       <div class="mx-auto py-12 max-w-2xl lg:(mx-0)">
-        <p class="pb-8 text-xl leading-normal">Pick up some cool merch made with our custom reunion logo. Again, all profits goes to current and future reunion expenses.</p>
+        {{ h2.x(spirit.merch.heading) }}
+        <p class="pb-8 text-xl leading-normal">{{ spirit.merch.lead }}</p>
       </div>
       <div class="flex(& wrap)">
-        {% for item in merch.items %}
+        {% for item in spirit.merch.items %}
           <a href="{{ item.url }}" class="mx-auto w-1/3">
             <figure class="p-4">
               <img src="/_assets/img/spirit/{{ item.img }}" alt="{{ item.title }} merch item" class="rounded-lg" />

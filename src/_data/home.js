@@ -18,7 +18,7 @@ module.exports = {
     ],
   },
   details: {
-    heading: 'The schedule is jam-packed with smart, creative, and evil activities',
+    heading: 'The schedule is jam-packed with smart and creative activities',
     lead: 'The worst people from our school will be planning this... so don\'t get your hopes up. Either way though, it should be a fun time and you should really show up.',
     details: [
       {

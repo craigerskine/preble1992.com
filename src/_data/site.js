@@ -22,7 +22,7 @@ module.exports = function() {
         time: '7',
         location: 'Green Bay, WI',
         venue: 'The Woods Golf Course',
-        attending: 'Elliot?',
+        attending: '24+',
       }
     ],
     newsletter: {
