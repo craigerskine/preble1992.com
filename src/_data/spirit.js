@@ -27,6 +27,21 @@ module.exports = function() {
           img: 'mug.jpg',
           url: 'https://teepublic.com/mug/34031441-preble-92',
         },
+        {
+          title: '8-bit Magnet',
+          img: 'magnet-8.jpg',
+          url: 'https://teepublic.com/magnet/34212113-preble-92-8-bit',
+        },
+        {
+          title: '8-bit Laptop Case',
+          img: 'laptop-8.jpg',
+          url: 'https://teepublic.com/laptop-case/34212113-preble-92-8-bit',
+        },
+        {
+          title: '8-bit T-Shirt',
+          img: 'shirt-8.jpg',
+          url: 'https://teepublic.com/t-shirt/34212113-preble-92-8-bit',
+        },
       ],
     }
   }

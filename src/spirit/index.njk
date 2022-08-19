@@ -33,10 +33,10 @@ layout: 'layouts/default.njk'
       </div>
       <div class="flex(& wrap)">
         {% for item in spirit.merch.items %}
-          <a href="{{ item.url }}" class="group mx-auto p-4 w-full sm:(w-1/3)">
+          <a href="{{ item.url }}" class="group mx-auto py-8 px-4 w-full max-w-sm sm:(w-1/3)">
             <figure class="relative">
               <img src="/_assets/img/spirit/{{ item.img }}" alt="{{ item.title }} merch item" class="w-full object-cover shadow-xl rounded-3xl transform motion-safe:(transition) group-hover:(rotate-3) md:(h-72)" />
-              <figcaption class="py-1 px-2 bg-pri-50 text(xs center) absolute -bottom-3 inset-x-2 rounded-lg transform motion-safe:(transition) group-hover:(bg-pri-800 text-pri-100 -translate-y-2) md:(text-base inset-x-8)">{{ item.title }}</figcaption>
+              <figcaption class="py-1 px-2 bg-pri-800 text-pri-400 text(xs center) truncate  ring(2 white) absolute -bottom-3 inset-x-2 rounded-lg transform motion-safe:(transition) group-hover:(bg-pri-900 text-pri-100 -translate-y-2) md:(text-base inset-x-8)">{{ item.title }}</figcaption>
             </figure>
           </a>
         {% endfor %}
