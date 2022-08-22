@@ -1,4 +1,10 @@
+const yml = require("js-yaml");
+
 module.exports = function(eleventyConfig) {
+
+  // .yml extension in _data
+  eleventyConfig.addDataExtension("yml", (contents) => yml.load(contents));
+
   eleventyConfig.addPassthroughCopy('src/_redirects');
   eleventyConfig.addPassthroughCopy('src/_assets');
   eleventyConfig.addPassthroughCopy('src/favicon.ico');
@@ -16,7 +22,7 @@ module.exports = function(eleventyConfig) {
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
     dir: {
-      input: 'src',
+      input: '_site',
       output: 'public',
     },
   };
