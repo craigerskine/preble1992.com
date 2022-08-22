@@ -2,7 +2,7 @@ const yaml = require("js-yaml");
 
 module.exports = function(eleventyConfig) {
 
-  // .yml extension in _data
+  // .yaml extension in _data
   eleventyConfig.addDataExtension('yaml', (contents) => yaml.load(contents));
 
   eleventyConfig.addPassthroughCopy('_site/_redirects');
