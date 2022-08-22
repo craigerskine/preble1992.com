@@ -3,7 +3,7 @@ const yml = require("js-yaml");
 module.exports = function(eleventyConfig) {
 
   // .yml extension in _data
-  eleventyConfig.addDataExtension("yml", (contents) => yml.load(contents));
+  eleventyConfig.addDataExtension('yml', (contents) => yml.load(contents));
 
   eleventyConfig.addPassthroughCopy('_site/_redirects');
   eleventyConfig.addPassthroughCopy('_site/_assets');
