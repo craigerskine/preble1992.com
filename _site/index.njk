@@ -66,13 +66,14 @@ layout: 'layouts/default.njk'
                 <li class="w-full">
                   <figure class="mx-auto w-full max-w-xs relative lg:(max-w-none)">
                     <div class="w-full pt-[100%] relative">
+                      <div class="ring(2 inset sec-500 opacity-50) hidden absolute inset-0 transform translate-x-3 translate-y-3 rotate-2 rounded-3xl lg:(block)" aria-hidden="true"></div>
+                      <div class="ring(2 inset sec-500 opacity-80) hidden absolute inset-0 transform -translate-x-2 -translate-y-2 -rotate-1 rounded-3xl lg:(block)" aria-hidden="true"></div>
                       <img src="/_assets/img/people/{{ person.last | slugify }}-{{ person.first | slugify }}.jpg?v={% version %}" alt="{{ person.first }} {{ person.last }} photo" class="w-full h-full object(center cover) absolute inset-0 rounded-xl md:(rounded-3xl)" />
                     </div>
                     <figcaption class="pt-2 md:(pl-4)">
                       <strong class="block md:(text-lg)truncate ">{{ person.first }} {{ person.last }}</strong>
                       <small class="text-sm truncate block opacity-60">{{ person.meta }}</small>
-                      <div class="p-3 bg(sec-600) text(sm white center) absolute inset-x-4 -top-4 rounded-lg shadow-xl transform -rotate-3"
-                        x-show="eraTabActive !== 1" x-text="eraTabActive === 0 ? 'Send us your photo...' : 'Photo coming soon... Adam?'"></div>
+                      <div class="p-3 bg(sec-600) text(sm white center) absolute inset-x-4 -top-4 rounded-lg shadow-xl transform -rotate-3" x-show="eraTabActive !== 1" x-text="eraTabActive === 0 ? 'Send us your photo...' : 'Photo coming soon... Adam?'"></div>
                       <i x-show="eraTabActive !== 1" class="fa-thin fa-fw fa-user-graduate text(9xl sec-200) absolute top-24 left-1/2 opacity-20 transform -translate-x-1/2 md:(text-[calc(6vw)])"></i>
                     </figcaption>
                   </figure>
@@ -80,7 +81,7 @@ layout: 'layouts/default.njk'
               {% endif %}
             {% endfor %}
           </ul>
-          <p class="py-12 text-center">{{ btn.x(home.classmates.action, url='#', class='pointer-events-none', outline='true', prevent='true') }}</p>
+          <p class="py-12 text-center invisible">{{ btn.x(home.classmates.action, url='#', class='pointer-events-none', outline='true', prevent='true') }}</p>
         </div>
       </div>
     </div>
