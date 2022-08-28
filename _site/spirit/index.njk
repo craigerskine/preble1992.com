@@ -9,7 +9,7 @@ layout: 'layouts/default.njk'
 
 <section>
   <div class="text-white">{{ div.x() }}</div>
-  <article class="px-4 bg-white">
+  <article class="mx-auto py-8 px-4 bg-white relative lg:(py-24)">
     <div class="mx-auto max-w-7xl">
       <div class="relative lg:(flex items-center)">
         <div class="hidden text-sec-500 opacity-20 lg:(block absolute top-1/2 left-1/2 transform -translate-y-1/2)"><i class="fa-light fa-arrow-circle-right fa-10x"></i></div>
@@ -27,23 +27,29 @@ layout: 'layouts/default.njk'
           class="mx-auto relative"
         ></iframe>
       </div>
-      <div class="mx-auto py-12 max-w-2xl lg:(mx-0)">
-        {{ h2.x(spirit.merch.heading) }}
-        <p class="pb-8 text-xl leading-normal">{{ spirit.merch.lead }}</p>
-      </div>
-      <div class="flex(& wrap)">
-        {% for item in spirit.merch.items %}
-          <a href="{{ item.url }}" class="group mx-auto py-8 px-4 w-full max-w-sm sm:(w-1/3)">
-            <figure class="relative">
-              <img src="/_assets/img/spirit/{{ item.img }}" alt="{{ item.title }} merch item" class="w-full object-cover shadow-xl rounded-3xl transform motion-safe:(transition) group-hover:(rotate-3) md:(h-72)" />
-              <figcaption class="py-1 px-2 bg-pri-800 text-pri-400 text(xs center) truncate  ring(2 white) absolute -bottom-3 inset-x-2 rounded-lg transform motion-safe:(transition) group-hover:(bg-pri-900 text-pri-100 -translate-y-2) md:(text-base inset-x-8)">{{ item.title }}</figcaption>
-            </figure>
-          </a>
-        {% endfor %}
-        <div class="pt-10 w-full text-center">
-          {{ btn.x('More...', url='https://teepublic.com/user/qrayg', outline=true) }}
-        </div>
+    </div>
+  </article>
+</section>
+<section class="bg-pri-300 relative">
+  <div class="section-div text-white">{{ div.x(dir='b') }}</div>
+  <article class="mx-auto py-8 px-4 max-w-7xl relative lg:(py-24)">
+    <div class="mx-auto pb-12 max-w-2xl lg:(mx-0 max-w-4xl pr-24)">
+      {{ h2.x(spirit.merch.heading) }}
+      <p class="text(2xl)">{{ spirit.merch.lead }}</p>
+    </div>
+    <div class="flex(& wrap)">
+      {% for item in spirit.merch.items %}
+        <a href="{{ item.url }}" class="group mx-auto py-8 px-4 w-full max-w-sm sm:(w-1/3)">
+          <figure class="relative">
+            <img src="/_assets/img/spirit/{{ item.img }}" alt="{{ item.title }} merch item" class="w-full object-cover shadow-xl rounded-3xl transform motion-safe:(transition) group-hover:(rotate-3) md:(h-72)" />
+            <figcaption class="py-1 px-2 bg-pri-800 text-pri-400 text(xs center) truncate  ring(2 white) absolute -bottom-3 inset-x-2 rounded-lg transform motion-safe:(transition) group-hover:(bg-pri-900 text-pri-100 -translate-y-2) md:(text-base inset-x-8)">{{ item.title }}</figcaption>
+          </figure>
+        </a>
+      {% endfor %}
+      <div class="pt-10 w-full text-center">
+        {{ btn.x('More...', url='https://teepublic.com/user/qrayg', outline=true) }}
       </div>
     </div>
   </article>
+  <div class="section-div text-white">{{ div.x(dir='t') }}</div>
 </section>
