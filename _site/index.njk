@@ -2,11 +2,12 @@
 layout: 'layouts/default.njk'
 ---
 
-{% import 'components/h2.njk' as h2 %}
-{% import 'components/btn.njk' as btn %}
-{% import 'components/mast-details.njk' as mastDetails %}
-{% import 'components/deet-list.njk' as deetList %}
-{% import 'components/div.njk' as div %}
+{%- import 'components/h2.njk' as h2 %}
+{%- import 'components/mast-details.njk' as mastDetails %}
+{%- import 'components/student.njk' as student %}
+{%- import 'components/deet-list.njk' as deetList %}
+{%- import 'components/btn.njk' as btn %}
+{%- import 'components/div.njk' as div %}
 
 <section class="mx-auto px-4 max-w-2xl lg:(max-w-4xl px-12)">
   <h1 class="py-12 bg-gradient-to-r from-pri-500 to-pri-900 text(5xl transparent) bg-clip-text tracking-tighter font-bold sm:(text-7xl)">
@@ -26,7 +27,7 @@ layout: 'layouts/default.njk'
   {% endfor %}
 </section>
 <section>
-  <div class="section-div text-white">{{ div.x(dir='t') }}</div>
+  <div>{{ div.x(dir='t') }}</div>
   <article class="px-4 bg-white">
     <div class="mx-auto max-w-7xl">
       <div class="mx-auto py-12 max-w-2xl lg:(mx-0)">
@@ -35,8 +36,7 @@ layout: 'layouts/default.njk'
           {{ home.classmates.lead }}
         </p>
       </div>
-      <div class="pt-8 grid(& cols-1) items-start gap-y-8 gap-x-8 sm:(gap-y-16) lg:(pt-16 grid-cols-4)"
-        x-data="{{ home.classmatesNav | dump }}">
+      <div class="pt-8 grid(& cols-1) items-start gap-y-8 gap-x-8 sm:(gap-y-16) lg:(pt-16 grid-cols-4)"x-data="{{ home.classmatesNav | dump }}">
         <div class="w-full flex">
           <ul class="w-full flex(& row) justify-center lg:(pr-8 flex-col justify-start)" role="tablist">
             <template x-for="(tab, index) in eraTabs">
@@ -64,19 +64,7 @@ layout: 'layouts/default.njk'
             {% for person in people %}
               {% if person.allowed %}
                 <li class="w-full">
-                  <figure class="mx-auto w-full max-w-xs relative lg:(max-w-none)">
-                    <div class="w-full pt-[100%] relative">
-                      <div class="ring(2 inset sec-500 opacity-50) hidden absolute inset-0 transform translate-x-3 translate-y-3 rotate-2 rounded-3xl lg:(block)" aria-hidden="true"></div>
-                      <div class="ring(2 inset sec-500 opacity-80) hidden absolute inset-0 transform -translate-x-2 -translate-y-2 -rotate-1 rounded-3xl lg:(block)" aria-hidden="true"></div>
-                      <img src="/_assets/img/people/{{ person.last | slugify }}-{{ person.first | slugify }}.jpg?v={% version %}" alt="{{ person.first }} {{ person.last }} photo" class="w-full h-full object(center cover) absolute inset-0 rounded-xl md:(rounded-3xl)" />
-                    </div>
-                    <figcaption class="pt-2 md:(pl-4)">
-                      <strong class="block md:(text-lg)truncate ">{{ person.first }} {{ person.last }}</strong>
-                      <small class="text-sm truncate block opacity-60">{{ person.meta }}</small>
-                      <div class="p-3 bg(sec-600) text(sm white center) absolute inset-x-4 -top-4 rounded-lg shadow-xl transform -rotate-3" x-show="eraTabActive !== 1" x-text="eraTabActive === 0 ? 'Send us your photo...' : 'Photo coming soon... Adam?'"></div>
-                      <i x-show="eraTabActive !== 1" class="fa-thin fa-fw fa-user-graduate text(9xl sec-200) absolute top-24 left-1/2 opacity-20 transform -translate-x-1/2 md:(text-[calc(6vw)])"></i>
-                    </figcaption>
-                  </figure>
+                  {{ student.x(info=person) }}
                 </li>
               {% endif %}
             {% endfor %}
@@ -88,7 +76,7 @@ layout: 'layouts/default.njk'
   </article>
 </section>
 <section class="bg-pri-300 relative">
-  <div class="section-div text-white">{{ div.x(dir='b') }}</div>
+  <div>{{ div.x(dir='b') }}</div>
   <div class="mx-auto py-8 px-4 max-w-7xl relative lg:(py-32)">
     <div class="mx-auto pb-12 max-w-2xl lg:(mx-0 max-w-4xl pr-24)">
       {{ h2.x(home.details.heading) }}
@@ -107,5 +95,5 @@ layout: 'layouts/default.njk'
       {% endfor %}
     </ul>
   </div>
-  <div class="section-div text-white">{{ div.x(dir='t') }}</div>
+  <div>{{ div.x(dir='t') }}</div>
 </section>

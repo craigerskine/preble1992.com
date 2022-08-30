@@ -3,12 +3,12 @@ title: 'School Spirit'
 layout: 'layouts/default.njk'
 ---
 
-{% import 'components/h2.njk' as h2 %}
-{% import 'components/btn.njk' as btn %}
-{% import 'components/div.njk' as div %}
+{%- import 'components/h2.njk' as h2 %}
+{%- import 'components/btn.njk' as btn %}
+{%- import 'components/div.njk' as div %}
 
 <section>
-  <div class="text-white">{{ div.x() }}</div>
+  <div>{{ div.x() }}</div>
   <article class="mx-auto py-8 px-4 bg-white relative lg:(py-24)">
     <div class="mx-auto max-w-7xl">
       <div class="relative lg:(flex items-center)">
@@ -31,7 +31,7 @@ layout: 'layouts/default.njk'
   </article>
 </section>
 <section class="bg-pri-300 relative">
-  <div class="section-div text-white">{{ div.x(dir='b') }}</div>
+  <div>{{ div.x(dir='b') }}</div>
   <article class="mx-auto py-8 px-4 max-w-7xl relative lg:(py-24)">
     <div class="mx-auto pb-12 max-w-2xl lg:(mx-0 max-w-4xl pr-24)">
       {{ h2.x(spirit.merch.heading) }}

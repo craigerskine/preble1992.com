@@ -36,12 +36,12 @@ details:
   details:
     - label: Date
       info: 'November 5th, 2022'
-      sub: '@7pm - ???'
+      sub: '@7pm - ???<br />CST'
       url: /_assets/cal/preble-event.ics
       ico: fa-solid fa-calendar
     - label: Location
       info: The Woods Golf Course
-      sub: '530 Erie Rd.<br />Green Bay, WI<br />54311'
+      sub: '530 Erie Rd.<br />Green Bay, WI 54311'
       url: 'https://golfthewoods.com/facilities'
       ico: fa-solid fa-location-dot
     - label: Do your part
