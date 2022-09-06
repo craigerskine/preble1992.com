@@ -61,13 +61,13 @@ layout: 'layouts/default.njk'
         </div>
         <div class="lg:(col-span-3)">
           <ul class="grid(& cols-2) gap-x-8 gap-y-10 sm:(gap-y-16) md:(grid-cols-3)">
-            {% for person in people %}
-              {% if person.allowed %}
+            {%- for person in people %}
+              {%- if person.allowed %}
                 <li class="w-full">
                   {{ student.x(info=person) }}
                 </li>
-              {% endif %}
-            {% endfor %}
+              {%- endif %}
+            {%- endfor %}
           </ul>
           <p class="py-12 text-center invisible">{{ btn.x(home.classmates.action, url='#', class='pointer-events-none', outline='true', prevent='true') }}</p>
         </div>
@@ -83,7 +83,7 @@ layout: 'layouts/default.njk'
       <p class="text(2xl)">{{ home.details.lead }}</p>
     </div>
     <ul class="mx-auto max-w-md bg-white grid(& cols-1) divide(y gray-500 opacity-20) overflow-hidden rounded-3xl shadow lg:(grid-cols-3 divide-x divide-y-0 max-w-none)">
-      {% for detail in home.details.details %}
+      {%- for detail in home.details.details %}
         {{ deetList.x(
           detail.label,
           detail.info,
@@ -92,7 +92,7 @@ layout: 'layouts/default.njk'
           ico=detail.ico,
           idx=loop
         ) }}
-      {% endfor %}
+      {%- endfor %}
     </ul>
   </div>
   <div>{{ div.x(dir='t') }}</div>
