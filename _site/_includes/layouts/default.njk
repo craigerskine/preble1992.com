@@ -34,8 +34,9 @@
         <div class="mx-auto max-w-7xl flex(& wrap) items-center justify-between lg:(flex-nowrap)">
           <a href="/" class="group block transform motion-safe:(transition) hover:(rotate-3) lg:(grow basis-0)">
             {{ logo.x(
-              'm-auto w-auto h-12 text-sec-600 motion-safe:(transition) group-hover:(text-sec-500) lg:(h-16)',
-              'text-pri-800 motion-safe:(transition) group-hover:(text-pri-600)',
+              title=site.meta.title,
+              svg='m-auto w-auto h-12 text-sec-600 motion-safe:(transition) group-hover:(text-sec-500) lg:(h-16)',
+              logo='text-pri-800 motion-safe:(transition) group-hover:(text-pri-600)',
               ''
             ) }}
           </a>
@@ -91,8 +92,9 @@
             <div class="mb-5 flex items-center justify-center gap-x-8 md:(mb-0 justify-start)">
               <a href="/" class="group inline-flex transform motion-safe:(transition) hover:(rotate-3)">
                 {{ logo.x(
-                  'm-auto w-auto h-10 text-sec-500 motion-safe:(transition) group-hover:(text-sec-400) lg:(h-16)',
-                  'text-pri-400 motion-safe:(transition) group-hover:(text-pri-600)',
+                  title=site.meta.title,
+                  svg='m-auto w-auto h-10 text-sec-500 motion-safe:(transition) group-hover:(text-sec-400) lg:(h-16)',
+                  logo='text-pri-400 motion-safe:(transition) group-hover:(text-pri-600)',
                   ''
                 ) }}
               </a>
