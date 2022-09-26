@@ -87,8 +87,8 @@
             </div>
             <div class="w-1/2 bg(left no-repeat) absolute inset-y-0 right-0 opacity-30 filter blur-md" style="background-image: url('/_assets/img/bg-hornet.png')"></div>
           </div>
-          <div class="mx-auto py-12 px-4 max-w-7xl text-center md:(flex items-center justify-between)">
-            <div class="mb-5 flex items-center justify-center gap-x-8 md:(mb-0 justify-start)">
+          <div class="mx-auto py-12 max-w-7xl md:(flex)">
+            <div class="max-w-sm space-y-6">
               <a href="/" class="group inline-flex transform motion-safe:(transition) hover:(rotate-3)">
                 {{ logo.x(
                   title=site.meta.title,
@@ -96,19 +96,26 @@
                   logo='text-pri-400 motion-safe:(transition) group-hover:(text-pri-600)'
                 ) }}
               </a>
-              {% for soc in site.social %}
-                <a href="{{ soc.url }}" class="text(xl gray-400) inline-flex motion-safe:(transition) hover:(text-indigo-500)"><i class="m-auto fa-brands fa-fw fa-lg fa-{{ soc.ico }}" title="{{ soc.title }}"></i></a>
-              {% endfor %}
+              <p class="text-gray-500">{{ site.meta.description }}</p>
+              <ul class="flex flex-wrap space-x-6">
+                {% for soc in site.social %}
+                <li><a href="{{ soc.url }}" class="text(xl gray-400) inline-flex motion-safe:(transition) hover:(text-gray-900)"><i class="m-auto fa-brands fa-fw fa-lg fa-{{ soc.ico }}" title="{{ soc.title }}"></i></a></li>
+                {% endfor %}
+              </ul>
             </div>
-            <div class="text(sm pri-500) leading-relaxed md:(text-right)">
-              &copy;{% year %} {{ site.meta.footer }}<br />
+            <div class="pt-6 text(xs gray-500) leading-relaxed md:(ml-auto pt-0 text-right self-end)">
+              Updated: <time datetime="{{ build.time.raw }}">{{ build.time.formatted }}</time>
+            </div>
+          </div>
+          <div class="pt-6 pb-2 border(t gray-500 opacity-20)">
+            <p class="text-sm text-gray-400 xl:(text-center)">
+              &copy;{% year %} {{ site.meta.footer }}
               <a href="https://{{ site.meta.author_url }}/" class="group mx-1 text-sec-600 inline-flex flex-col motion-safe:(transition) hover:(text-sec-900)">
                 {{ site.meta.author }}
                 <b class="h-px w-full flex"><b class="w-0 bg-current motion-safe:(transition-all) group-hover:(w-full)"></b></b>
               </a>
-            </div>
+            </p>
           </div>
-          <small class="py-1 block text(pri-500 center)">Updated: <time datetime="{{ build.time.raw }}">{{ build.time.formatted }}</time></small>
         </div>
       </footer>
     </div>
