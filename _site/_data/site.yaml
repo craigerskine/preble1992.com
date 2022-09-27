@@ -1,7 +1,7 @@
 ---
 meta:
   title: 'Preble Class of 1992: 30th Reunion'
-  description: Preble High School class of 1992 reunion information, planning, & junk like that
+  description: Green Bay Preble High School class of 1992 reunion information & planning
   author: Craig Erskine
   author_url: craigerskine.com
   footer: Logo + Website + Maintenance
@@ -37,3 +37,35 @@ social:
   - title: GitHub
     url: 'https://github.com/craigerskine/preble1992.com'
     ico: github-square
+
+footer:
+  - title: Information
+    nav:
+      - title: Home
+        sub: 'Main page'
+        url: '/'
+      - title: School store
+        sub: 'Donate / Merch'
+        url: '/spirit/'
+      - title: Online yearbook
+        sub: Virtual
+        url: '/yearbook/'
+  - title: Tech
+    nav:
+      - title: 11ty
+        sub: SSG
+        url: 'https://11ty.dev/'
+      - title: Twind
+        sub: Styles
+        url: 'https://twind.dev/'
+      - title: Netlify
+        sub: Host
+        url: 'https://netlify.com/'
+  - title: Partners
+    nav:
+      - title: Craig Erskine
+        sub: Webmaster
+        url: 'https://craigerskine.com/'
+      - title: Ideas by Elliot
+        sub: Datamaster
+        url: 'https://ideasbyelliot.com/'
