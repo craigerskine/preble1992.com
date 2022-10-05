@@ -10,15 +10,15 @@ layout: 'layouts/default.njk'
 {%- import 'components/div.njk' as div %}
 
 <section class="mx-auto px-4 max-w-2xl lg:(max-w-4xl px-12)">
-  <h1 class="py-12 bg-gradient-to-r from-pri-500 to-pri-900 text(5xl transparent) bg-clip-text tracking-tighter font-bold sm:(text-7xl)">
+  <h1 class="py-12 bg-gradient-to-r from-pri-400 to-sec-400 text(5xl transparent) bg-clip-text tracking-tighter font-bold sm:(text-7xl)">
     {{ home.mast.heading }}
   </h1>
-  <div class="pb-6 space-y-6 text-lg lg:(text-2xl leading-normal)">
+  <div class="pb-6 space-y-6 text(lg pri-500) lg:(text-2xl leading-normal)">
     <p>{{ home.mast.lead }}</p>
     <p>{{ home.mast.content }}</p>
   </div>
   {% for info in site.reunion.slice(0, 1) %}
-    <dl class="pt-6 pb-24 grid grid-cols-2 gap-y-6 gap-x-10 sm:(gap-y-10 gap-x-16 text-center) lg:(auto-cols-auto grid-flow-col grid-cols-none justify-start text-left)">
+    <dl class="pt-6 pb-24 grid(& cols-2) gap-y-6 gap-x-10 sm:(gap-y-10 gap-x-16 text-center) lg:(auto-cols-auto grid-flow-col grid-cols-none justify-start text-left)">
       {{ mastDetails.x(label='Attending', value=info.attending) }}
       {{ mastDetails.x(label='Date', value=info.date) }}
       {{ mastDetails.x(label='Venue', value=info.venue) }}
