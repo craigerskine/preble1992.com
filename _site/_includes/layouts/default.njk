@@ -35,8 +35,8 @@
           <a href="/" class="group block transform motion-safe:(transition) hover:(rotate-3) lg:(grow basis-0)">
             {{ logo.x(
               title=site.meta.title,
-              svg='m-auto w-auto h-12 text-sec-200 motion-safe:(transition) group-hover:(text-sec-500) lg:(h-16)',
-              tag='text-pri-600 motion-safe:(transition) group-hover:(text-pri-600)'
+              svg='m-auto w-auto h-12 text-sec-500 motion-safe:(transition) group-hover:(text-sec-200) lg:(h-16)',
+              tag='text-pri-600 motion-safe:(transition) group-hover:(text-pri-300)'
             ) }}
           </a>
           <div class="mb-6 pb-6 border(b pri-500 opacity-30) w-full text(pri-500 xs) order-first lg:(mb-0 pb-0 border-0 w-auto text-base order-none)">
@@ -57,7 +57,7 @@
             {% endfor %}
           </div>
           <div class="flex items-center space-x-8 lg:(grow basis-0 justify-end)">
-            {{ btn.x(site.nav.action, sub='Donate / Merch', ico='fa fa-fw fa-store text-sec-700 lg:(text-2xl)', url='/spirit/', class='py-1 bg-sec-400 text-sec-900 hover:(bg-sec-100) md:(py-2.5 leading-none)') }}
+            {{ btn.x(site.nav.action, sub='Donate / Merch', ico='fa fa-fw fa-store text-sec-700 lg:(text-2xl)', url='/spirit/', class='py-1 bg-sec-400 text-sec-900 hover:(bg-pri-300 scale-105) md:(py-2.5 leading-none)') }}
           </div>
         </div>
       </header>
@@ -97,9 +97,9 @@
                 ) }}
               </a>
               <p class="text-gray-500">{{ site.meta.description }}</p>
-              <ul class="flex flex-wrap space-x-6">
+              <ul class="flex flex-wrap space-x-8">
                 {%- for soc in site.social %}
-                <li><a href="{{ soc.url }}" class="text(xl gray-400) inline-flex motion-safe:(transition) hover:(text-gray-900)"><i class="m-auto fa-brands fa-fw fa-lg fa-{{ soc.ico }}" title="{{ soc.title }}"></i></a></li>
+                <li><a href="{{ soc.url }}" class="text(xl gray-400) inline-flex motion-safe:(transition) hover:(text-pri-700)"><i class="m-auto fa-brands fa-2x fa-{{ soc.ico }}" title="{{ soc.title }}"></i></a></li>
                 {%- endfor %}
               </ul>
             </div>

@@ -44,11 +44,11 @@ footer:
       - title: Home
         sub: 'Main page'
         url: '/'
-      - title: School store
+      - title: Store
         sub: 'Donate / Merch'
         url: '/spirit/'
-      - title: Online yearbook
-        sub: Virtual
+      - title: Yearbook
+        sub: Online
         url: '/yearbook/'
   - title: Tech
     nav:
