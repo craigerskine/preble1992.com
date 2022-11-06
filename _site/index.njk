@@ -19,7 +19,7 @@ layout: 'layouts/default.njk'
   </div>
   {% for info in site.reunion.slice(0, 1) %}
     <dl class="pt-6 pb-24 grid(& cols-2) gap-y-6 gap-x-10 sm:(gap-y-10 gap-x-16 text-center) lg:(auto-cols-auto grid-flow-col grid-cols-none justify-start text-left)">
-      {{ mastDetails.x(label='Attending', value=info.attending) }}
+      {{ mastDetails.x(label='Attended', value=info.attending) }}
       {{ mastDetails.x(label='Date', value=info.date) }}
       {{ mastDetails.x(label='Venue', value=info.venue) }}
       {{ mastDetails.x(label='Location', value=info.location) }}
