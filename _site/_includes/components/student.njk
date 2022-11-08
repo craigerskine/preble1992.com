@@ -3,7 +3,7 @@
   <div class="w-full pt-[100%] relative">
     <div class="ring(2 inset sec-500 opacity-50) hidden absolute inset-0 transform translate-x-3 translate-y-3 rotate-2 rounded-3xl lg:(block)" aria-hidden="true"></div>
     <div class="ring(2 inset sec-500 opacity-80) hidden absolute inset-0 transform -translate-x-2 -translate-y-2 -rotate-1 rounded-3xl lg:(block)" aria-hidden="true"></div>
-    <img src="/_assets/img/people/{{ info.last | slugify }}-{{ info.first | slugify }}.jpg?v={% version %}" alt="{{ info.first }} {{ info.last }} photo" class="w-full h-full object(center cover) absolute inset-0 rounded-xl md:(rounded-3xl)" />
+    <img src="/_assets/img/people/{{ info.last | slugify }}-{{ info.first | slugify }}.jpg" alt="{{ info.first }} {{ info.last }} photo" class="w-full h-full object(center cover) absolute inset-0 rounded-xl md:(rounded-3xl)" />
   </div>
   <figcaption class="pt-2 md:(pl-4)">
     <strong class="block md:(text-lg)truncate ">{{ info.first }} {{ info.last }}</strong>
