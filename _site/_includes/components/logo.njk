@@ -1,5 +1,5 @@
-{% macro x(title='Logo', svg='', logo='', tag='') %}
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" fill="none" class="stroke-current {{ svg }}">
+{% macro x(title='Logo', svg='', logo='', tag='', square=false) %}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {% if square %}200{% else %}400{% endif %} 200" role="img" fill="none" class="stroke-current {{ svg }}">
   <title>{{ title }} logo</title>
   <g class="fill-current {{ logo }}" transform="translate(15 12)">
     <path d="m90 161-5 16-5-16z" />
