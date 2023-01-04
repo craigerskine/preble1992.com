@@ -39,7 +39,7 @@
               tag='text-pri-600 motion-safe:(transition) group-hover:(text-pri-300)'
             ) }}
           </a>
-          <div class="mb-6 pb-6 border(b pri-500 opacity-30) w-full text(pri-500 xs) order-first lg:(mb-0 pb-0 border-0 w-auto text-base order-none)">
+          <div class="line-through mb-6 pb-6 border(b pri-500 opacity-30) w-full text(pri-500 xs) order-first lg:(mb-0 pb-0 border-0 w-auto text-base order-none)">
             {% for info in site.reunion.slice(0, 1) %}
               <div class="mx-auto flex items-center justify-center space-x-2 sm:(space-x-4)">
                 <p>
@@ -87,7 +87,7 @@
             </div>
             <div class="w-1/2 bg(left no-repeat) absolute inset-y-0 right-0 opacity-30 filter blur-md" style="background-image: url('/_assets/img/bg-hornet.png')"></div>
           </div>
-          <div class="mt-12 mx-auto py-12 max-w-7xl lg:(grid(& cols-3) gap-16)">
+          <section class="mt-12 mx-auto py-12 max-w-7xl lg:(grid(& cols-3) gap-16)">
             <div class="space-y-8 lg:(col-span-1)">
               <a href="/" class="group inline-flex transform motion-safe:(transition) hover:(rotate-3)">
                 {{ logo.x(
@@ -122,18 +122,13 @@
               </div>
               {%- endfor %}
             </div>
-
-          </div>
-          <div class="pt-6 pb-2 border(t gray-500 opacity-20) text(sm gray-500 center)">
-            <p>
-              &copy;{% year %} {{ site.meta.footer }}
-              <a href="https://{{ site.meta.author_url }}/" class="group mx-1 text-gray-600 inline-flex flex-col motion-safe:(transition) hover:(text-gray-900)">
-                {{ site.meta.author }}
-                <b class="h-px w-full flex"><b class="w-0 bg-current motion-safe:(transition-all) group-hover:(w-full)"></b></b>
-              </a>
-            </p>
-            <small>Updated: <time datetime="{{ build.time.raw }}">{{ build.time.formatted }}</time></small>
-          </div>
+          </section>
+          <section class="pt-6 pb-2 border(t gray-500 opacity-20) text(sm gray-500 center)">
+            <div class="mx-auto max-w-7xl flex items-center justify-between">
+              <p>&copy;{% year %} {{ site.meta.footer }}</p>
+              <small>Updated: <time datetime="{{ build.time.raw }}">{{ build.time.formatted }}</time></small>
+            </div>
+          </section>
         </div>
       </footer>
     </div>
