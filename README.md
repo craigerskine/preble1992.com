@@ -1,11 +1,7 @@
-# [preble1992.com](https://preble1992.com)
+# [preble1992.com](https://preble1992.com) [![Netlify Status](https://api.netlify.com/api/v1/badges/239f7a33-842d-4ffb-876b-dea8a5135182/deploy-status)](https://app.netlify.com/sites/preble1992-com/deploys)
 
 - [x] [11ty](https://11ty.dev)
 - [x] [Twind](https://twind.style)
-
----
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/239f7a33-842d-4ffb-876b-dea8a5135182/deploy-status)](https://app.netlify.com/sites/preble1992-com/deploys)
 
 ### To do:
 
