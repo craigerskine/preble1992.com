@@ -36,7 +36,7 @@ details:
     - label: Date
       info: 'November 5th, 2022'
       sub: '@7pm - ???<br />CST'
-      url: /_assets/cal/preble-event.ics
+      url: /_assets/files/preble-event.ics
       ico: fa-solid fa-calendar
     - label: Location
       info: The Woods Golf Course

@@ -1,4 +1,4 @@
-{% macro x(as='a', url='#', slot, sub='', ico='', class='', outline='', prevent='') %}
+{% macro x(as='a', url='#', slot, sub='', ico='', class='', outline=false, prevent='') %}
 <{{ as }}
   {% if as === 'button' %}
     type="button"
@@ -10,8 +10,8 @@
       {% if prevent !== '' %}
         opacity-30 
       {% endif %} 
-      {% if outline !== '' %}
-        ring(1 inset current) hover:(ring-4) 
+      {% if outline %}
+        ring-(1 inset current) hover:(ring-4) 
       {% else %}
         bg-pri-600 text-white hover:(bg-pri-900) 
       {% endif %}

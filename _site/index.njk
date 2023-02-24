@@ -10,15 +10,15 @@ layout: 'layouts/default.njk'
 {%- import 'components/div.njk' as div %}
 
 <section class="mx-auto px-4 max-w-2xl lg:(max-w-4xl px-12)">
-  <h1 class="py-12 bg-gradient-to-r from-pri-400 to-sec-400 text(5xl transparent) bg-clip-text tracking-tighter font-bold sm:(text-7xl)">
+  <h1 class="py-12 bg-gradient-to-r from-pri-400 to-sec-400 text-(5xl transparent) bg-clip-text tracking-tighter font-bold sm:(text-7xl)">
     {{ home.mast.heading }}
   </h1>
-  <div class="pb-6 space-y-6 text(lg pri-500) lg:(text-2xl leading-normal)">
+  <div class="pb-6 space-y-6 text-(lg pri-500) lg:(text-2xl leading-normal)">
     <p>{{ home.mast.lead }}</p>
     <p>{{ home.mast.content }}</p>
   </div>
   {% for info in site.reunion.slice(0, 1) %}
-    <dl class="pt-6 pb-24 text-pri-400 grid(& cols-2) gap-y-6 gap-x-10 sm:(gap-y-10 gap-x-16 text-center) lg:(auto-cols-auto grid-flow-col grid-cols-none justify-start text-left)">
+    <dl class="pt-6 pb-24 text-pri-400 grid-(& cols-2) gap-y-6 gap-x-10 sm:(gap-y-10 gap-x-16 text-center) lg:(auto-cols-auto grid-flow-col grid-cols-none justify-start text-left)">
       {{ mastDetails.x(label='Attended', value=info.attending) }}
       {{ mastDetails.x(label='Date', value=info.date) }}
       {{ mastDetails.x(label='Venue', value=info.venue) }}
@@ -36,13 +36,13 @@ layout: 'layouts/default.njk'
           {{ home.classmates.lead }}
         </p>
       </div>
-      <div class="pt-8 grid(& cols-1) items-start gap-y-8 gap-x-8 sm:(gap-y-16) lg:(pt-16 grid-cols-4)"x-data="{{ home.classmatesNav | dump }}">
+      <div class="pt-8 grid-(& cols-1) items-start gap-y-8 gap-x-8 sm:(gap-y-16) lg:(pt-16 grid-cols-4)"x-data="{{ home.classmatesNav | dump }}">
         <div class="w-full flex">
-          <ul class="w-full flex(& row) justify-center lg:(pr-8 flex-col justify-start)" role="tablist">
+          <ul class="w-full flex-(& row) justify-center lg:(pr-8 flex-col justify-start)" role="tablist">
             <template x-for="(tab, index) in eraTabs">
               <li>
-                <a href="#" class="group flex(& col) motion-safe:(transition) hover:(text-pri-600) lg:(flex-row flex-row-reverse)" :class="{ 'active text-sec-600': eraTabActive === index }" @click.prevent="eraTabActive = index">
-                  <div class="timeline-ui pb-4 flex(& row) items-center lg:(pb-0 flex-col)" aria-hidden="true">
+                <a href="#" class="group flex-(& col) motion-safe:(transition) hover:(text-pri-600) lg:(flex-row flex-row-reverse)" :class="{ 'active text-sec-600': eraTabActive === index }" @click.prevent="eraTabActive = index">
+                  <div class="timeline-ui pb-4 flex-(& row) items-center lg:(pb-0 flex-col)" aria-hidden="true">
                     <div class="w-[9px] h-[9px] flex-none rounded-full relative z-10 motion-safe:(transition) lg:(mt-1)" :class="eraTabActive === index ? 'bg-current ring-2 ring-white transform scale-150' : 'ring-1 ring-current'"></div>
                     <div class="w-full h-px bg-gray-700 flex opacity-20 lg:(w-px h-full)">
                       <template x-if="index === (eraTabs.length - 1)">
@@ -60,7 +60,7 @@ layout: 'layouts/default.njk'
           </ul>
         </div>
         <div class="lg:(col-span-3)">
-          <ul class="grid(& cols-2) gap-x-8 gap-y-10 sm:(gap-y-16) md:(grid-cols-3)">
+          <ul class="grid-(& cols-2) gap-x-8 gap-y-10 sm:(gap-y-16) md:(grid-cols-3)">
             {%- for person in people %}
               {%- if person.allowed %}
                 <li class="w-full">
@@ -69,7 +69,7 @@ layout: 'layouts/default.njk'
               {%- endif %}
             {%- endfor %}
           </ul>
-          <p class="py-12 text-center">{{ btn.x(home.classmates.action, url='/yearbook/', outline='true') }}</p>
+          <p class="py-12 text-center">{{ btn.x(home.classmates.action, url='/yearbook/', outline=true) }}</p>
         </div>
       </div>
     </div>
@@ -82,7 +82,7 @@ layout: 'layouts/default.njk'
       {{ h2.x(home.details.heading) }}
       <p class="text(2xl)">{{ home.details.lead }}</p>
     </div>
-    <ul class="mx-auto max-w-md bg-white grid(& cols-1) divide(y gray-500 opacity-20) overflow-hidden rounded-3xl shadow lg:(grid-cols-3 divide-x divide-y-0 max-w-none)">
+    <ul class="mx-auto max-w-md bg-white grid-(& cols-1) divide-(y gray-500 opacity-20) overflow-hidden rounded-3xl shadow lg:(grid-cols-3 divide-x divide-y-0 max-w-none)">
       {%- for detail in home.details.details %}
         {{ deetList.x(
           detail.label,
