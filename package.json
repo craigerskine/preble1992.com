@@ -1,7 +1,7 @@
 {
   "name": "preble1992.com",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy"
