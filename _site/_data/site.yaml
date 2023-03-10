@@ -49,6 +49,14 @@ footer:
       - title: Yearbook
         sub: Online
         url: '/yearbook/'
+  - title: Partners
+    nav:
+      - title: Craig Erskine
+        sub: Webmaster
+        url: 'https://craigerskine.com/'
+      - title: Ideas by Elliot
+        sub: Datamaster
+        url: 'https://ideasbyelliot.com/'
   - title: Tech
     nav:
       - title: 11ty
@@ -60,11 +68,3 @@ footer:
       - title: Netlify
         sub: Host
         url: 'https://netlify.com/'
-  - title: Partners
-    nav:
-      - title: Craig Erskine
-        sub: Webmaster
-        url: 'https://craigerskine.com/'
-      - title: Ideas by Elliot
-        sub: Datamaster
-        url: 'https://ideasbyelliot.com/'
