@@ -9,7 +9,7 @@
     <strong class="block truncate md:(text-lg)">{{ info.data.first }} {{ info.data.last }}</strong>
     <small class="text-sm truncate block opacity-60">{{ info.data.meta }}</small>
     <div class="p-3 bg-sec-600 text-(sm white center) absolute inset-x-4 -top-4 rounded-lg shadow-xl transform -rotate-3" x-show="eraTabActive !== 1" x-text="eraTabActive === 0 ? 'Send us your photo...' : 'Photo coming soon... Adam?'"></div>
-    <i x-show="eraTabActive !== 1" class="fa-thin fa-fw fa-user-graduate text-(9xl sec-200) absolute top-24 left-1/2 opacity-20 transform -translate-x-1/2 md:(text-[calc(6vw)])"></i>
+    <i x-show="eraTabActive !== 1" class="text-(9xl sec-200) absolute top-24 left-1/2 opacity-20 transform -translate-x-1/2 md:(text-[calc(6vw)])"><iconify-icon icon="fa6-solid:user-graduate" inline="false"></iconify-icon></i>
   </figcaption>
 </figure>
 {% endmacro %}
