@@ -87,8 +87,8 @@
             </div>
             <div class="w-1/2 bg-(left no-repeat) absolute inset-y-0 right-0 opacity-30 filter blur-md" style="background-image: url('/_assets/img/bg-hornet.png')"></div>
           </div>
-          <section class="mt-12 mx-auto py-12 max-w-7xl lg:(grid-(& cols-3) gap-16)">
-            <div class="space-y-8 lg:(col-span-1)">
+          <section class="mt-12 mx-auto py-12 max-w-7xl text-center lg:(text-start flex justify-between)">
+            <div class="mx-auto max-w-sm flex-none space-y-8 lg:(mx-0)">
               <a href="/" class="group inline-flex transform motion-safe:(transition) hover:(rotate-3)">
                 {{ logo.x(
                   title=site.meta.title,
@@ -98,13 +98,13 @@
                 ) }}
               </a>
               <p class="text-gray-500">{{ site.meta.description }}</p>
-              <ul class="flex flex-wrap space-x-8">
+              <ul class="flex-(& wrap) justify-center space-x-8 lg:(justify-start)">
                 {%- for soc in site.social %}
                 <li><a href="{{ soc.url }}" class="text-(3xl gray-400) inline-flex motion-safe:(transition) hover:(text-pri-700)"><iconify-icon icon="{{ soc.ico }}" inline="false" class="m-auto" title="{{ soc.title }}"></iconify-icon></a></li>
                 {%- endfor %}
               </ul>
             </div>
-            <div class="lg:(col-span-2 grid-(& cols-3) gap-8)">
+            <nav class="mx-auto w-full flex-(& col) gap-10 md:(max-w-xl flex-row justify-end gap-32) lg:(mx-0)">
               {%- for nav in site.footer %}
               <div class="mt-12 lg:(mt-0)">
                 <strong class="text-(sm gray-600) uppercase">{{ nav.title }}</strong>
@@ -121,7 +121,7 @@
                 </ul>
               </div>
               {%- endfor %}
-            </div>
+            </nav>
           </section>
           <section class="pt-6 pb-2 border-(t gray-500/20) text-(sm gray-500 center)">
             <div class="mx-auto max-w-7xl flex items-center justify-between">
