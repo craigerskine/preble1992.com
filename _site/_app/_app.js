@@ -27,10 +27,11 @@ install({
   ],
 });
 
-injectGlobal({
-  // global
-  '[x-cloak]': { '@apply': 'hidden', },
-});
+injectGlobal`
+  @layer base {
+    [x-cloak] { @apply hidden; }
+  }
+`
 
 import Alpine from 'alpinejs';
 window.Alpine = Alpine;
