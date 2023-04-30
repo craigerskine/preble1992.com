@@ -26,7 +26,7 @@ pagination:
         <p id="yearbook-nav" class="sr-only">Yearbook navigation</p>
         <ol class="text-3xl flex items-center justify-center gap-x-6">
           {% if pagination.href.previous %}<li><a href="{{ pagination.href.previous }}" title="Previous page"><iconify-icon icon="fa6-solid:angle-left" inline="false"></iconify-icon></a></li>{% endif %}
-          <li class="text-sm opacity-50">{% if pagination.pageNumber %}{{ pagination.pageNumber }} of {% endif %}{{ pagination.pages.length }} pages</li>
+          <li class="text-sm opacity-50">{% if pagination.pageNumber %}{{ pagination.pageNumber }} of {% endif %}{{ pagination.pages.length - 1 }} pages</li>
           {% if pagination.href.next %}<li><a href="{{ pagination.href.next }}" title="Next page"><iconify-icon icon="fa6-solid:angle-right" inline="false"></iconify-icon></a></li>{% endif %}
         </ol>
       </nav>
