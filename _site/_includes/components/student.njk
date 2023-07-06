@@ -8,8 +8,7 @@
   <div class="pt-2 md:(pl-4)">
     <strong class="block truncate md:(text-lg)">{{ info.data.first }} {{ info.data.last }}</strong>
     <small class="text-sm truncate block opacity-60">{{ info.data.meta }}</small>
-    <div class="p-3 bg-sec-600 text-(sm white center) absolute inset-x-4 -top-4 rounded-lg shadow-xl transform -rotate-3" x-show="eraTabActive !== 1" x-text="eraTabActive === 0 ? 'Send us your photo...' : 'Photo coming soon... Adam?'"></div>
-    <i x-show="eraTabActive !== 1" class="text-(9xl sec-200) absolute top-24 left-1/2 opacity-20 transform -translate-x-1/2 md:(text-[calc(6vw)])"><iconify-icon icon="fa6-solid:user-graduate" inline="false"></iconify-icon></i>
+    <a href="https://github.com/craigerskine/preble1992.com/tree/main/_site/_assets/img/people" class="p-3 bg-sec-600 text-(sm white center) absolute inset-x-4 -top-4 rounded-lg shadow-xl transform -rotate-3" x-show="eraTabActive !== 1" x-text="eraTabActive === 0 ? 'Send us your photos...' : 'Photo coming soon... Adam?'"></a>
   </div>
 </div>
 {% endmacro %}
