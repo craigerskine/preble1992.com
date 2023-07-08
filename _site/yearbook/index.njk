@@ -10,7 +10,7 @@ pagination:
 {%- import 'components/student.njk' as student %}
 {%- import 'components/div.njk' as div %}
 
-<section>
+<section x-data="{ eraTabActive: 1 }">
   <div>{{ div.x() }}</div>
   <article class="mx-auto py-8 px-4 bg-white relative lg:(py-24)">
     <div class="mx-auto max-w-7xl">

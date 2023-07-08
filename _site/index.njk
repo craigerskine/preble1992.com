@@ -36,7 +36,7 @@ layout: 'layouts/default.njk'
           {{ home.classmates.lead }}
         </p>
       </div>
-      <div class="pt-8 grid-(& cols-1) items-start gap-y-8 gap-x-8 sm:(gap-y-16) lg:(pt-16 grid-cols-4)"x-data="{{ home.classmatesNav | dump }}">
+      <div class="pt-8 grid-(& cols-1) items-start gap-y-8 gap-x-8 sm:(gap-y-16) lg:(pt-16 grid-cols-4)" x-data="{{ home.classmatesNav | dump }}">
         <div class="w-full flex">
           <ul class="w-full flex-(& row) justify-center lg:(pr-8 flex-col justify-start)" role="tablist">
             <template x-for="(tab, index) in eraTabs">
