@@ -18,7 +18,7 @@ install({
         sec: theme('colors.yellow'),
       }),
       fontFamily: ({ theme }) => ({
-        serif: 'Roboto Slab,'+ theme('fontFamily.serif'),
+        serif: ['Robot Slab', ...theme('fontFamily.serif')],
       }),
     },
   },
