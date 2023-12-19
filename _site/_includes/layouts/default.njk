@@ -73,7 +73,7 @@
             <div class="ring-(2 inset sec-500/50) hidden absolute inset-0 transform -translate-x-4 -translate-y-4 -rotate-1 rounded-3xl lg:(block)" aria-hidden="true"></div>
             <div class="mx-auto max-w-2xl grid-(& grid-cols-1) items-center gap-x-16 gap-y-14 relative z-10 xl:(max-w-none grid-cols-2)">
               <div class="text-sec-700 space-y-4">
-                <strong class="text-(4xl sec-900) tracking-tighter font-(medium serif) block sm:(text-5xl)">{{ site.newsletter.heading }}</strong>
+                <strong class="text-(4xl sec-900) tracking-tighter font-(black serif) block sm:(text-5xl)">{{ site.newsletter.heading }}</strong>
                 <p class="text-lg tracking-tight">{{ site.newsletter.lead }}</p>
               </div>
               <div class="xl:(text-center)">
@@ -99,7 +99,7 @@
                   square=true
                 ) }}
               </a>
-              <p class="text-gray-500">{{ site.meta.description }}</p>
+              <p class="text-(gray-500 wrap-balance)">{{ site.meta.description }}</p>
               <ul class="flex-(& wrap) justify-center space-x-8 lg:(justify-start)">
                 {%- for soc in site.social %}
                 <li><a href="{{ soc.url }}" class="text-(3xl gray-400) inline-flex motion-safe:(transition) hover:(text-pri-700)"><iconify-icon icon="{{ soc.ico }}" inline="false" class="m-auto" title="{{ soc.title }}"></iconify-icon></a></li>

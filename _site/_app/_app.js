@@ -23,7 +23,7 @@ install({
     },
   },
   rules: [
-    [ 'scroll-smooth', { 'scroll-behavior': 'smooth' } ],
+    ['text-wrap-(unset|wrap|nowrap|balance)', 'textWrap'],
   ],
 });
 

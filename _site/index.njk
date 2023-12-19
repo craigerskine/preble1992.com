@@ -14,8 +14,8 @@ layout: 'layouts/default.njk'
     {{ home.mast.heading }}
   </h1>
   <div class="pb-6 space-y-6 text-(lg pri-500) lg:(text-2xl leading-normal)">
-    <p>{{ home.mast.lead }}</p>
-    <p>{{ home.mast.content }}</p>
+    <p class="text-wrap-balance">{{ home.mast.lead }}</p>
+    <p class="text-wrap-balance">{{ home.mast.content }}</p>
   </div>
   {% for info in site.reunion.slice(0, 1) %}
     <dl class="pt-6 pb-24 text-pri-400 grid-(& cols-2) gap-y-6 gap-x-10 sm:(gap-y-10 gap-x-16 text-center) lg:(auto-cols-auto grid-flow-col grid-cols-none justify-start text-left)">
@@ -80,7 +80,7 @@ layout: 'layouts/default.njk'
   <div class="mx-auto py-8 px-4 max-w-7xl relative lg:(py-32)">
     <div class="mx-auto pb-12 max-w-2xl lg:(mx-0 max-w-4xl pr-24)">
       {{ h2.x(home.details.heading) }}
-      <p class="text(2xl)">{{ home.details.lead }}</p>
+      <p class="text-(2xl wrap-balance)">{{ home.details.lead }}</p>
     </div>
     <ul class="mx-auto max-w-md bg-white grid-(& cols-1) divide-(y gray-500 opacity-20) overflow-hidden rounded-3xl shadow lg:(grid-cols-3 divide-x divide-y-0 max-w-none)">
       {%- for detail in home.details.details %}
