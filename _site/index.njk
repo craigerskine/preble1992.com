@@ -10,7 +10,7 @@ layout: 'layouts/default.njk'
 {%- import 'components/div.njk' as div %}
 
 <section class="mx-auto px-4 max-w-2xl lg:(max-w-4xl px-12)">
-  <h1 class="py-12 bg-gradient-to-r from-pri-400 to-sec-400 text-(5xl transparent) bg-clip-text tracking-tighter font-bold sm:(text-7xl)">
+  <h1 class="py-12 bg-gradient-to-r from-pri-400 to-sec-400 text-(5xl transparent) font-black bg-clip-text tracking-tight sm:(text-7xl)">
     {{ home.mast.heading }}
   </h1>
   <div class="pb-6 space-y-6 text-(lg pri-500) lg:(text-2xl leading-normal)">
@@ -52,7 +52,7 @@ layout: 'layouts/default.njk'
                   </div>
                   <div class="timeline pr-6 sm:(pr-12) lg:(pb-12 pr-16 pl-0 text-right)">
                     <small class="leading-none text-xs block opacity-60 sm:(text-sm leading-none)" x-text="tab.era"></small>
-                    <strong class="py-2 text-xl block md:(text-3xl)" x-text="tab.year"></strong>
+                    <strong class="py-2 text-xl font-(black serif) block md:(text-3xl)" x-text="tab.year"></strong>
                   </div>
                 </a>
               </li>
