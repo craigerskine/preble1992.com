@@ -18,7 +18,7 @@ install({
         sec: theme('colors.yellow'),
       }),
       fontFamily: ({ theme }) => ({
-        serif: ['Playfair Display', ...theme('fontFamily.serif')],
+        sans: ['Roboto Slab', ...theme('fontFamily.sans')],
       }),
     },
   },
@@ -30,7 +30,7 @@ install({
 injectGlobal`
   @layer base {
     [x-cloak] { @apply hidden; }
-    h1,h2,h3,h4,h5,h6 { @apply font-serif font-bold; }
+    h1,h2,h3,h4,h5,h6 { @apply font-bold; }
   }
 `
 

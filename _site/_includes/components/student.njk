@@ -6,7 +6,7 @@
     <img :src="'/_assets/img/people/'+ (eraTabActive === 0 ? '2000/' : (eraTabActive === 2) ? '1980/' : '') +'{{ info.data.last | slugify }}-{{ info.data.first | slugify }}.jpg'" alt="{{ info.first }} {{ info.last }} photo" class="w-full h-full object-(center cover) absolute inset-0 rounded-xl md:(rounded-3xl)" />
   </div>
   <div class="pt-2 md:(pl-4)">
-    <strong class="font-(black serif) block truncate md:(text-lg)">{{ info.data.first }} {{ info.data.last }}</strong>
+    <strong class="font-black block truncate md:(text-lg)">{{ info.data.first }} {{ info.data.last }}</strong>
     <small class="text-sm truncate block opacity-60">{{ info.data.meta }}</small>
     <a href="https://github.com/craigerskine/preble1992.com/tree/main/_site/_assets/img/people" class="p-3 bg-sec-600 text-(sm white center) absolute inset-x-4 -top-4 rounded-lg shadow-xl transform -rotate-3" x-show="eraTabActive !== 1" x-text="eraTabActive === 0 ? 'Send us your photos...' : 'Photo coming soon... Adam?'"></a>
   </div>
