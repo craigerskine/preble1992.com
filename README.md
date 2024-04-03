@@ -11,7 +11,7 @@
 - [x] Placeholder site
 - [x] Forward `info@...` email via [ImprovMX](https://improvmx.com/)
 - [x] Install [11ty](https://11ty.dev)
-- [x] Design new Hornet logo...
+- [x] Design [NEW! Hornet logo](https://www.figma.com/file/SXww5Fd7NIGdULiEVvgJa7/preble1992-logo?type=design&node-id=0%3A1&mode=design&t=vodDdPBhCVfuzubM-1)...
 - [x] Setup store to sell new design (shirts/stickers/mugs/etc)
 - [x] Setup donation system
 - [x] Create super cool web design
