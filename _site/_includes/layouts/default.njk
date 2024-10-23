@@ -1,3 +1,6 @@
+{%- from 'components/logo.njk' import logo -%}
+{%- from 'components/btn.njk' import btn -%}
+
 <!doctype html>
 <html lang="en" class="bg-pri-900 antialiased" x-data="{}" x-cloak>
 
@@ -10,7 +13,7 @@
     <meta name="generator" content="{{ eleventy.generator }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" />
@@ -20,10 +23,6 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://preble1992.com{{ page.url }}" />
     <meta property="og:image" content="https://preble1992.com/_assets/img/og.png" />
-
-    {% import 'components/logo.njk' as logo %}
-    {% import 'components/btn.njk' as btn %}
-
   </head>
 
   <body class="bg-sec-200 bg-opacity-80 text-pri-900 !block" style="display: none;">
@@ -35,7 +34,7 @@
       <header class="py-6 px-4 w-full flex-none relative lg:(py-10)">
         <div class="mx-auto max-w-7xl flex-(& wrap) items-center justify-between lg:(flex-nowrap)">
           <a href="/" class="group block transform motion-safe:(transition) hover:(rotate-3) lg:(flex-none)">
-            {{ logo.x(
+            {{ logo(
               title=site.meta.title,
               svg='m-auto w-auto h-12 text-sec-500 motion-safe:(transition) group-hover:(text-sec-200) lg:(h-16)',
               tag='text-pri-600 motion-safe:(transition) group-hover:(text-pri-300)'
@@ -59,7 +58,7 @@
             {% endfor %}
           </div>
           <div class="flex items-center space-x-8 lg:(flex-(none basis-0) justify-end)">
-            {{ btn.x(site.nav.action, sub='Donate / Merch', ico='fa6-solid:store', url='/spirit/', outline=true, class='py-1 bg-sec-400 text-sec-900 hover:(bg-pri-300 rotate-3 !ring-0) md:(py-2.5 leading-none)') }}
+            {{ btn(site.nav.action, sub='Donate / Merch', ico='fa6-solid:store', url='/spirit/', outline=true, class='py-1 bg-sec-400 text-sec-900 hover:(bg-pri-300 rotate-3 !ring-0) md:(py-2.5 leading-none)') }}
           </div>
         </div>
       </header>
@@ -77,13 +76,13 @@
                 <p class="text-lg tracking-tight">{{ site.newsletter.lead }}</p>
               </div>
               <div class="xl:(text-center)">
-                {{ btn.x(site.newsletter.action, url='http://eepurl.com/h8CPAL', class='px-16') }}
+                {{ btn(site.newsletter.action, url='http://eepurl.com/h8CPAL', class='px-16') }}
               </div>
               <!-- <form class="opacity-50">
                 <div class="py-2.5 pr-2.5 w-full flex bg-white relative rounded-xl shadow-xl motion-safe:(transition) focus-within:(ring(2 sec-900)">
                   <label for="form-newsletter-signup" class="sr-only">Email</label>
                   <input type="email" id="form-newsletter-signup" placeholder="{{ site.newsletter.placeholder }}" class="w-full flex-1 bg-transparent pl-6 pr-2.5 focus:outline-none" required disabled />
-                  <span class="flex-none">{{ btn.x(site.newsletter.action, as='button', class='pointer-events-none', prevent='true') }}</span>
+                  <span class="flex-none">{{ btn(site.newsletter.action, as='button', class='pointer-events-none', prevent='true') }}</span>
                 </div>
               </form> -->
             </div>
@@ -92,7 +91,7 @@
           <section class="mt-12 mx-auto py-12 max-w-7xl text-center lg:(text-start flex justify-between)">
             <div class="mx-auto max-w-sm flex-none space-y-8 lg:(mx-0)">
               <a href="/" class="group inline-flex transform motion-safe:(transition) hover:(rotate-3)">
-                {{ logo.x(
+                {{ logo(
                   title=site.meta.title,
                   svg='m-auto w-auto h-10 text-sec-500 motion-safe:(transition) group-hover:(text-sec-400) lg:(h-16)',
                   tag='hidden',

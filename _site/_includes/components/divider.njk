@@ -1,0 +1,5 @@
+{%- macro divider(param) -%}
+<svg xmlns="http://www.w3.org/2000/svg" class="w-full h-[105px]" aria-hidden="true">
+  <rect fill="url(#div-{{ param.dir if param.dir else 't' }})" x="0" y="0" width="100%" height="100%" />
+</svg>
+{%- endmacro -%}

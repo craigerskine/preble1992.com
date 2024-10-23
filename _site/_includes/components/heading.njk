@@ -1,0 +1,6 @@
+{%- macro heading(param) -%}
+  {%- set tag -%}{{- param.as if param.as else 'h2' -}}{%- endset -%}
+  <{{ tag }} class="mb-6 text-(4xl pri-700 wrap-balance) tracking-tighter font-black sm:(text-5xl leading-tight)">
+    {{ caller() }}
+  </{{ tag }}>
+{%- endmacro -%}

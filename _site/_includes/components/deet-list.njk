@@ -1,4 +1,4 @@
-{% macro x(label, info, sub, url='#', ico='check', idx) %}
+{%- macro deetList(label, info, sub, url='#', ico='check', idx) -%}
   <li class="flex">
     <a href="{{ url }}" class="group py-8 px-4 w-full h-full flex relative motion-safe:(transition) hover:(bg-pri-600 text-white) focus:(bg-pri-600 text-white)"{% if idx.index === 1 %} download{% endif %}{% if idx.index === 3 %} onclick="window.open(this.href, '_blank', 'width=640,height=480,top=100,left=100,titlebar=no,toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes'); return false;"{% endif %}>
       <div class="w-full text-center flex-(& col)">
@@ -10,4 +10,4 @@
       </div>
     </a>
   </li>
-{% endmacro %}
+{%- endmacro -%}

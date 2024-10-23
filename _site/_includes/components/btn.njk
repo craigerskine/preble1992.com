@@ -1,21 +1,21 @@
-{% macro x(as='a', url='#', slot, sub='', ico='', class='', outline=false, prevent='') %}
+{%- macro btn(as='a', url='#', slot, sub='', ico='', class='', outline=false, prevent='') -%}
 <{{ as }}
-  {% if as === 'button' %}
+  {%- if as === 'button' %}
     type="button"
-  {% else %}
+  {%- else %}
     href="{{ url }}"
-  {% endif %}
-  {% if prevent !== '' %} @click.prevent {% endif %}
-    class="{{ class }} 
-      {% if prevent !== '' %}
-        opacity-30 
-      {% endif %} 
-      {% if outline %}
-        ring-(1 inset current) hover:(ring-4) 
-      {% else %}
-        bg-pri-700 text-white hover:(bg-pri-900) 
-      {% endif %}
-      py-3 px-4 text-sm inline-flex items-center justify-center gap-2 rounded-xl motion-safe:(transition) md:(text-base) 
+  {%- endif %}
+  {%- if prevent !== '' %} @click.prevent {% endif %}
+    class="{{ class }}
+      {%- if prevent !== '' %}
+        opacity-30
+      {%- endif %}
+      {%- if outline %}
+        ring-(1 inset current) hover:(ring-4)
+      {%- else %}
+        bg-pri-700 text-white hover:(bg-pri-900)
+      {%- endif %}
+      py-3 px-4 text-sm inline-flex items-center justify-center gap-2 rounded-xl motion-safe:(transition) md:(text-base)
     ">
   {%- if ico !== '' %}<iconify-icon icon="{{ ico }}" inline="false" class="text-[1.3em] opacity-50"></iconify-icon>{%- endif %}
   <span>
@@ -23,4 +23,4 @@
     {%- if sub !== '' %}<small class="pt-px text-xs font-semibold block opacity-70">{{ sub }}</small>{%- endif %}
   </span>
 </{{ as }}>
-{% endmacro %}
+{%- endmacro -%}

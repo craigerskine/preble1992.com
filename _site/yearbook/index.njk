@@ -6,24 +6,24 @@ pagination:
   size: 24
 ---
 
-{%- import 'components/h2.njk' as h2 %}
-{%- import 'components/student.njk' as student %}
-{%- import 'components/div.njk' as div %}
+{%- from 'components/heading.njk' import heading -%}
+{%- from 'components/student.njk' import student -%}
+{%- from 'components/divider.njk' import divider -%}
 
 <section x-data="{ eraTabActive: 1 }">
-  <div>{{ div.x() }}</div>
+  <div>{{ divider() }}</div>
   <article class="mx-auto py-8 px-4 bg-white relative lg:(py-24)">
     <div class="mx-auto max-w-7xl">
-      <div>{{ h2.x("Yearbook") }}</div>
+      <div>{% call heading({}) %}{{ title }}{% endcall %}</div>
       <ul class="grid(& cols-2) gap-12 md:(grid-cols-3 gap-20)">
         {%- for person in pagination.items %}
           <li class="w-full">
-            {{ student.x(info=person) }}
+            {{ student(info=person) }}
           </li>
         {%- endfor %}
       </ul>
       <nav class="pt-12" aria-labelledby="yearbook-nav">
-        <p id="yearbook-nav" class="sr-only">Yearbook navigation</p>
+        <p id="yearbook-nav" class="sr-only">{{ title }} navigation</p>
         <ol class="text-3xl flex items-center justify-center gap-x-6">
           {% if pagination.href.previous %}<li><a href="{{ pagination.href.previous }}" title="Previous page"><iconify-icon icon="fa6-solid:angle-left" inline="false"></iconify-icon></a></li>{% endif %}
           <li class="text-sm opacity-50">{% if pagination.pageNumber %}{{ pagination.pageNumber }} of {% endif %}{{ pagination.pages.length - 1 }} pages</li>

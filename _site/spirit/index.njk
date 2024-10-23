@@ -3,18 +3,20 @@ title: 'School Store'
 layout: 'layouts/default.njk'
 ---
 
-{%- import 'components/h2.njk' as h2 %}
-{%- import 'components/btn.njk' as btn %}
-{%- import 'components/div.njk' as div %}
+{%- from 'components/heading.njk' import heading -%}
+{%- from 'components/btn.njk' import btn -%}
+{%- from 'components/divider.njk' import divider -%}
 
 <section>
-  <div>{{ div.x() }}</div>
+  <div>{{ divider() }}</div>
   <article class="mx-auto py-8 px-4 bg-white relative lg:(py-24)">
     <div class="mx-auto max-w-7xl">
       <div class="relative lg:(flex items-center)">
         <div class="hidden text-sec-500 opacity-20 lg:(block absolute top-1/2 left-1/2 transform -translate-y-1/2)"><iconify-icon icon="fa6-solid:arrow-right-from-bracket" inline="false" class="text-[10rem]"></iconify-icon></div>
         <div class="mx-auto py-12 max-w-2xl relative lg:(mx-0)">
-          {{ h2.x(spirit.donate.heading) }}
+          {%- call heading({}) %}
+            {{ spirit.donate.heading }}
+          {%- endcall %}
           <p class="text-2xl leading-normal">{{ spirit.donate.lead }}</p>
         </div>
         <iframe
@@ -22,7 +24,7 @@ layout: 'layouts/default.njk'
           title="PayPal donate campaign card"
           frameborder="0"
           width="300"
-          height="420"
+          height="425"
           scrolling="no"
           class="mx-auto relative"
         ></iframe>
@@ -31,10 +33,12 @@ layout: 'layouts/default.njk'
   </article>
 </section>
 <section class="bg-pri-300 relative">
-  <div>{{ div.x(dir='b') }}</div>
+  <div>{{ divider({dir:'b'}) }}</div>
   <article class="mx-auto py-8 px-4 max-w-7xl relative lg:(py-24)">
     <div class="mx-auto pb-12 max-w-2xl lg:(mx-0 max-w-4xl pr-24)">
-      {{ h2.x(spirit.merch.heading) }}
+      {%- call heading({}) %}
+        {{ spirit.merch.heading }}
+      {%- endcall %}
       <p class="text(2xl)">{{ spirit.merch.lead }}</p>
     </div>
     <div class="flex(& wrap)">
@@ -47,9 +51,9 @@ layout: 'layouts/default.njk'
         </a>
       {%- endfor %}
       <div class="pt-10 w-full text-center">
-        {{ btn.x('More...', url='https://teepublic.com/user/qrayg', outline=true) }}
+        {{ btn('More...', url='https://teepublic.com/user/qrayg', outline=true) }}
       </div>
     </div>
   </article>
-  <div class="section-div text-white">{{ div.x(dir='t') }}</div>
+  <div class="section-div text-white">{{ divider({dir:'t'}) }}</div>
 </section>

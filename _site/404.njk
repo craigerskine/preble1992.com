@@ -3,10 +3,10 @@ title: '404 / Sassy'
 layout: 'layouts/default.njk'
 ---
 
-{%- import 'components/div.njk' as div %}
+{%- from 'components/divider.njk' import divider -%}
 
 <section>
-  <div>{{ div.x() }}</div>
+  <div>{{ divider() }}</div>
   <article class="px-4 min-h-[50vh] bg-white">
     <a href="/" class="mx-auto py-8 px-4 text-pri-700 text-(4xl center) leading-relaxed font-black block lg:(py-16 text-[calc(2vw+2vh)])">
       Oops <i class="mx-1 font-thin inline-block opacity-20">/</i> 404

@@ -1,4 +1,4 @@
-{% macro x(title='Logo', svg='', logo='', tag='', square=false) %}
+{%- macro logo(title='Logo', svg='', logo='', tag='', square=false) -%}
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {% if square %}200{% else %}400{% endif %} 200" role="img" fill="none" class="stroke-current {{ svg }}">
   <title>{{ title }} logo</title>
   <g class="fill-current {{ logo }}" transform="translate(15 12)">
@@ -16,4 +16,4 @@
     <path d="m50 51h-50v-29.2622951l25-21.7377049 25 21.7377049v58.5245902l-25 21.7377049-25-21.7377049" />
   </g>
 </svg>
-{% endmacro %}
+{%- endmacro -%}
