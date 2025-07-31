@@ -3,7 +3,7 @@
     <a href="{{ url }}" class="group py-8 px-4 w-full h-full flex relative motion-safe:(transition) hover:(bg-pri-600 text-white) focus:(bg-pri-600 text-white)"{% if idx.index === 1 %} download{% endif %}{% if idx.index === 3 %} onclick="window.open(this.href, '_blank', 'width=640,height=480,top=100,left=100,titlebar=no,toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes'); return false;"{% endif %}>
       <div class="w-full text-center flex-(& col)">
         <b class="mx-auto w-16 h-16 bg-pri-800/0 text-xl flex-(& none) rounded-full motion-safe:(transition) group-hover:(bg-opacity-100 text-white) group-focus:(bg-opacity-100 text-white) lg:(text-4xl)">
-          <iconify-icon icon="{{ ico }}" inline="false" class="m-auto opacity-50 group-hover:(opacity-100) group-focus:(opacity-100)"></iconify-icon>
+          <iconify-icon icon="{{ ico }}" inline="false" class="m-auto opacity-50 group-hover:(opacity-100) group-focus:(opacity-100)" noobserver></iconify-icon>
         </b>
         <h3 class="line-through py-4 font-bold text-lg lg:(text-2xl)">{{ info }}</h3>
         <p class="line-through text-sm leading-relaxed block opacity-70 lg:(text-lg)">{{ sub | safe }}</p>
