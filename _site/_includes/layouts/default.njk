@@ -18,11 +18,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" />
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <meta property="og:title" content="{% if title %}{{ title +' / '+ site.meta.title }}{% else %}{{ site.meta.title or site.meta.title }}{% endif %}" />
     <meta property="og:description" content="{{ site.meta.description }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://preble1992.com{{ page.url }}" />
-    <meta property="og:image" content="https://preble1992.com/_assets/img/og.png" />
+    <meta property="og:image" content="https://preble1992.com/og.png" />
   </head>
 
   <body class="bg-sec-200 bg-opacity-80 text-pri-900 !block" style="display: none;">
