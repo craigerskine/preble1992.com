@@ -27,7 +27,7 @@
 
 ### Wishful thinking?
 
-- [ ] Possible Netlify CMS?
+- [ ] Possible Decap CMS?
 - [ ] Public yearbook
   - [ ] Meta info (fun facts, where are they now, etc.)
   - [ ] Gamification (badges/points applied to people that attend guitar night, etc.)
