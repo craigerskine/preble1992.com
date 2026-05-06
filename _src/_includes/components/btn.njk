@@ -3,7 +3,7 @@
   {%- if as === 'button' %}
     type="button"
   {%- else %}
-    href="{{ url }}"
+    href="{{ url | url }}"
   {%- endif %}
   {%- if prevent !== '' %} @click.prevent {% endif %}
     class="{{ class }}
