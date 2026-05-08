@@ -1,7 +1,6 @@
 {%- set pageTitle -%}{% if title %}{{ title + site.meta.separator + site.meta.title }}{% else %}{{ site.meta.title or site.meta.title }}{% endif %}{%- endset -%}
 
 {%- from 'components/logo.njk' import logo -%}
-{%- from 'components/btn.njk' import btn -%}
 
 <!doctype html>
 <html lang="en" class="bg-pri-900 antialiased" x-data="{}" x-cloak>
@@ -73,7 +72,10 @@
             {% endfor %}
           </div>
           <div class="flex items-center space-x-8 lg:(flex-(none basis-0) justify-end)">
-            {{ btn(site.nav.action, sub='Donate / Merch', ico='fa6-solid:store', url='/spirit/', outline=true, class='py-1 bg-sec-400 text-sec-900 hover:(bg-pri-300 rotate-3 !ring-0) md:(py-2.5 leading-none)') }}
+            <a href="{{ '/spirit/' | url }}" class="{{ ui.btn }} btn-secondary">
+              <iconify-icon icon="mdi:storefront" class="iconify" noobserver></iconify-icon>
+              <span>{{ site.nav.action }} <small class="pt-px text-xs font-semibold block opacity-70">Donate / Merch</small></span>
+            </a>
           </div>
         </div>
       </header>
@@ -91,15 +93,8 @@
                 <p class="text-lg tracking-tight">{{ site.newsletter.lead }}</p>
               </div>
               <div class="xl:(text-center)">
-                {{ btn(site.newsletter.action, url='http://eepurl.com/h8CPAL', class='px-16') }}
+                <a href="http://eepurl.com/h8CPAL" class="{{ ui.btn }} btn-primary btn-wide">{{ site.newsletter.action }}</a>
               </div>
-              <!-- <form class="opacity-50">
-                <div class="py-2.5 pr-2.5 w-full flex bg-white relative rounded-xl shadow-xl motion-safe:(transition) focus-within:(ring(2 sec-900)">
-                  <label for="form-newsletter-signup" class="sr-only">Email</label>
-                  <input type="email" id="form-newsletter-signup" placeholder="{{ site.newsletter.placeholder }}" class="w-full flex-1 bg-transparent pl-6 pr-2.5 focus:outline-none" required disabled />
-                  <span class="flex-none">{{ btn(site.newsletter.action, as='button', class='pointer-events-none', prevent='true') }}</span>
-                </div>
-              </form> -->
             </div>
             <div class="w-1/2 bg-(left no-repeat) absolute inset-y-0 right-0 opacity-30 filter blur-md" style="background-image: url('{{ '/' | url }}_assets/img/bg-hornet.png')"></div>
           </div>
@@ -142,13 +137,12 @@
           <section class="pt-6 pb-2 border-(t gray-500/20) text-(sm gray-500 center)">
             <div class="mx-auto max-w-7xl flex items-center justify-between">
               <p>&copy;{% year %} {{ site.meta.footer }}</p>
-              <small>Updated: <time datetime="{{ build.time.raw }}">{{ build.time.formatted }}</time></small>
+              <small>Updated: <time datetime="{% build 'raw' %}">{% build %}</time></small>
             </div>
           </section>
         </div>
       </footer>
     </div>
-
     <svg xmlns="http://www.w3.org/2000/svg" class="w-0 h-0 text-white fill-current absolute bottom-0 left-0" aria-hidden="true">
       <defs>
         <pattern id="div-t" width="480" height="140" patternUnits="userSpaceOnUse">

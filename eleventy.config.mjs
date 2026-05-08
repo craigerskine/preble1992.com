@@ -35,6 +35,23 @@ export default function (eleventyConfig) {
   // shortcodes
   eleventyConfig.addShortcode('bust', () => `${new Date().getFullYear()}${new Date().getMonth()}${new Date().getDate()}${new Date().getHours()}`);
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
+  eleventyConfig.addShortcode('build', function(part) {
+    // <time datetime="{% build 'raw' %}">{% build %}</time>
+    const now = new Date();
+    const tz = 'America/Chicago';
+    if (part === 'raw' || part === 'date') {
+      return now.toLocaleDateString('en-CA', { timeZone: tz });
+    }
+    if (part === 'iso' || part === 'datetime') {
+      return now.toISOString();
+    }
+    return new Intl.DateTimeFormat('en-US', {
+      month: '2-digit',
+      day: '2-digit',
+      year: 'numeric',
+      timeZone: tz,
+    }).format(now);
+  });
   eleventyConfig.addShortcode('renderblock', function(name) {
     return (this.page.setblock || {})[name] || '';
   });

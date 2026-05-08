@@ -1,20 +1,19 @@
----
 donate:
   heading: Donate today!
-  lead: >-
+  lead: |
     Help support the people that organize the reunions and the dude that built
     this site with his bare hands. ALL of the profits will be used for reunion
     expenses!
 
 donated:
   heading: Thank you!
-  lead: >-
+  lead: |
     Your support truly makes a massive difference, and it will benefit your
     entire class for years to come. Again, we cannot say it enough, THANK YOU!
 
 merch:
   heading: Cool merch!
-  lead: >-
+  lead: |
     Pick up some amazing merch made with our custom reunion logo. Again, all
     profits will be used for current and future reunion expenses.
   items:

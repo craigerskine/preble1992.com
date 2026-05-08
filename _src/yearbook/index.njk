@@ -3,33 +3,45 @@ title: 'Yearbook'
 layout: 'layouts/default.njk'
 pagination:
   data: collections.students
-  size: 15
+  size: 16
 ---
 
 {%- from 'components/heading.njk' import heading -%}
 {%- from 'components/student.njk' import student -%}
 {%- from 'components/divider.njk' import divider -%}
 
+{%- set btnStyle -%}border-(& transparent) w-11 h-11 text-4xl flex items-center justify-center rounded-xl transition hover:(bg-pri-500/25 shadow){%- endset -%}
+
+{%- macro nav(param) -%}
+<nav class="ml-auto w-fit" aria-labelledby="yearbook-nav">
+  <p id="yearbook-nav" class="sr-only">{{ title }} navigation</p>
+  <ol class="text-3xl flex items-center justify-center gap-x-6">
+    {% if pagination.href.previous %}<li><a href="{{ pagination.href.previous | url }}" class="{{ ui.btn }} btn-ghost btn-square" title="Previous page"><iconify-icon icon="mdi:chevron-left" noobserver></iconify-icon></a></li>{% endif %}
+    <li class="text-sm opacity-60 [font-variant-numeric:tabular-nums]">{% if pagination.pageNumber %}Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}{% else %}{{ pagination.pages.length }} Pages{% endif %}</li>
+    {% if pagination.href.next %}<li><a href="{{ pagination.href.next | url }}" class="{{ ui.btn }} btn-ghost btn-square" title="Next page"><iconify-icon icon="mdi:chevron-right" noobserver></iconify-icon></a></li>{% endif %}
+  </ol>
+</nav>
+{%- endmacro -%}
+
 <section x-data="{ eraTabActive: 1 }">
   <div>{{ divider() }}</div>
   <article class="mx-auto py-8 px-4 bg-white relative lg:(py-24)">
     <div class="mx-auto max-w-7xl">
-      <div>{% call heading({}) %}{{ title }}{% endcall %}</div>
-      <ul class="grid(& cols-2) gap-12 md:(grid-cols-3 gap-20)">
+      <div class="pb-12 flex-(& wrap) items-end justify-between gap-8">
+        <hgroup class="max-w-2xl">
+          {% call heading({}) %}{{ title }}{% endcall %}
+          <p class="text-2xl leading-normal">{{ home.classmates.lead }}</p>
+        </hgroup>
+        {{ nav() }}
+      </div>
+      <ul class="grid-(& cols-2) gap-8 lg:(grid-cols-4 gap-20)">
         {%- for person in pagination.items %}
           <li class="w-full">
             {{ student(info=person) }}
           </li>
         {%- endfor %}
       </ul>
-      <nav class="pt-12" aria-labelledby="yearbook-nav">
-        <p id="yearbook-nav" class="sr-only">{{ title }} navigation</p>
-        <ol class="text-3xl flex items-center justify-center gap-x-6">
-          {% if pagination.href.previous %}<li><a href="{{ pagination.href.previous | url }}" title="Previous page"><iconify-icon icon="fa6-solid:angle-left" inline="false" noobserver></iconify-icon></a></li>{% endif %}
-          <li class="text-sm opacity-50">{% if pagination.pageNumber %}{{ pagination.pageNumber }} of {% endif %}{{ pagination.pages.length - 1 }} pages</li>
-          {% if pagination.href.next %}<li><a href="{{ pagination.href.next | url }}" title="Next page"><iconify-icon icon="fa6-solid:angle-right" inline="false" noobserver></iconify-icon></a></li>{% endif %}
-        </ol>
-      </nav>
+      <div class="pt-12">{{ nav() }}</div>
     </div>
   </article>
 </section>

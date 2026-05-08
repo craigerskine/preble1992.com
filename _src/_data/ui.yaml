@@ -1,0 +1,18 @@
+btn: '
+ min-h-[2.75rem]
+ no-underline
+ inline-flex
+ items-center
+ justify-center
+ gap-2
+ transition
+ [&:where(.btn-primary)]:(bg-pri-700 text-white hover:bg-pri-900)
+ [&:where(.btn-secondary)]:(bg-sec-400 text-sec-900 hover:(bg-pri-300 rotate-3))
+ [&:where(.btn-outline)]:(text-current ring-(1 inset current) hover:(ring-4))
+ [&:where(.btn-ghost)]:(bg-transparent text-current hover:(bg-pri-500/25 text-pri-900))
+ [&:where(:not(.btn-circle,.btn-square))]:(px-4 text-sm leading-none md:(text-base leading-none))
+ [&:where(.btn-circle,.btn-square)]:(w-11)
+ [&:where(:not(.btn-circle))]:(rounded-xl)
+ [&:where(.btn-circle)]:(rounded-full)
+ [&:where(.btn-wide)]:(w-full max-w-[15rem])
+'

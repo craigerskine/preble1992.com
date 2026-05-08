@@ -1,18 +1,17 @@
----
 mast:
   heading: Preble High 30th reunion was awesome...
-  lead: >-
+  lead: |
     In a fantastical universe, decades ago, Preble High School released unto
     the earth some of the most wonderful, talented, and amazing people. This
     site is here to honor them... and provide news & junk.
-  content: >-
+  content: |
     The 30th anniversary was amazballz! We all partied like is was 1992.
     Let's all thank the volunteers that planned the party and got
     everything ready just for you.
 
 classmates:
   heading: Your classmates
-  lead: >-
+  lead: |
     Remember these goofy faces? Neither do we... mainly because most of the
     photos are missing. Help us out and receive some FREE space bucks.
   action: View all
@@ -29,7 +28,7 @@ classmatesNav:
 
 details:
   heading: The schedule was packed with smart and creative activities
-  lead: >-
+  lead: |
     The lowliest people from our school planned this... so I hope you didn't get your
     hopes up. Either way though, it was a fun time, and we are thankful for all that attended.
   details:

@@ -1,4 +1,3 @@
----
 meta:
   title: 'Preble Class of 1992: 30th Reunion'
   description: Green Bay Preble High School class of 1992 reunion information & planning
@@ -25,7 +24,7 @@ reunion:
 
 newsletter:
   heading: Stay up to date
-  lead: >-
+  lead: |
     Get updates on all of our events and be the first to get notified when
     things start to pop off... like when Elliot learns a new chord.
   placeholder: Email (coming soon)
