@@ -18,8 +18,8 @@ layout: 'layouts/default.njk'
       </hgroup>
       <div class="grid grid-cols-2 md:grid-cols-3">
         {%- for item in spirit.merch.items %}
-          <figure class="group mx-auto py-8 px-4 -space-y-3 relative z-[1] [&:has(:hover,:focus-visible)]:([&>a]:(bg-pri-900 text-pri-100) [&>img]:(rotate-3)) [&:has(:focus-visible)>img]:outline-(& 2 current offset-2)">
-            <img src="{{ '/' | url }}_assets/img/spirit/{{ item.img }}" alt="{{ item.title }} merch item" class="border-(& black/20) w-full object-cover relative z-[-1] shadow-xl rounded-3xl motion-safe:transition md:(h-72)" />
+          <figure class="group mx-auto py-8 px-4 -space-y-3 relative z-[1] motion-safe:transition [&:has(:hover,:focus-visible)]:scale-105 [&:has(:hover,:focus-visible)]:([&>img]:(rotate-0)) [&:has(:focus-visible)>img]:outline-(& 2 current offset-2)">
+            <img src="{{ '/' | url }}_assets/img/spirit/{{ item.img }}" alt="{{ item.title }} merch item" class="border-(& black/20) w-full object-cover relative z-[-1] shadow-xl rounded-3xl {{ ['rotate-3', '-rotate-3', 'rotate-6', '-rotate-6'] | random }} motion-safe:transition md:(h-72)" />
             <figcaption>
               <a href="{{ item.url }}" class="mx-4 py-1 px-2 bg-pri-800 text-(pri-400 xs center) font-semibold block truncate outline-(& 2 dashed sec-500 offset-2) rounded-lg after:(content-[''] absolute inset-0) hover:(text-white) transition md:(text-base)">{{ item.title }}</a>
             </figcaption>

@@ -145,29 +145,19 @@
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" class="w-0 h-0 text-white fill-current absolute bottom-0 left-0" aria-hidden="true">
       <defs>
-        <pattern id="div-t" width="480" height="140" patternUnits="userSpaceOnUse">
-          <g opacity=".25">
-            <polygon points="80,35 100,0 140,0 160,35 140,70 100,70" />
-            <polygon points="260,70 280,35 320,35 340,70 320,105 280,105" />
-          </g>
-          <g opacity=".5">
-            <polygon points="20,70 40,35 80,35 100,70 80,105 40,105" />
-            <polygon points="140,70 160,35 200,35 220,70 200,105 160,105" />
-          </g>
-          <polygon points="0,140 0,70 20,70 40,105 80,105 100,70 140,70 160,105 200,105 220,70 260,70 280,105 320,105 340,70 380,70 400,105 440,105 460,70 480,70 480,140" />
+        <g id="div-shape" fill-rule="evenodd">
+          <polygon points="0 86 25 72 50 86 75 72 100 86 125 72 150 86 175 72 200 86 225 72 250 86 275 72 300 86 325 72 350 86" />
+          <polygon opacity=".2" points="225 50 250 36 275 50 275 72 250 86 225 72" />
+          <polygon opacity=".4" points="125 50 150 36 175 50 175 72 150 86 125 72" />
+          <polygon opacity=".6" points="75 50 100 36 125 50 125 72 100 86 75 72" />
+          <polygon opacity=".4" points="25 50 50 36 75 50 75 72 50 86 25 72" />
+          <polygon opacity=".2" points="50 14 75 0 100 14 100 36 75 50 50 36" />
+        </g>
+        <pattern id="div-t" width="350" height="86" patternUnits="userSpaceOnUse">
+          <use href="#div-shape" />
         </pattern>
-        <pattern id="div-b" width="480" height="140" patternUnits="userSpaceOnUse">
-          <g transform="scale(1, -1) translate(0, -105)">
-            <g opacity=".25">
-              <polygon points="80,35 100,0 140,0 160,35 140,70 100,70" />
-              <polygon points="260,70 280,35 320,35 340,70 320,105 280,105" />
-            </g>
-            <g opacity=".5">
-              <polygon points="20,70 40,35 80,35 100,70 80,105 40,105" />
-              <polygon points="140,70 160,35 200,35 220,70 200,105 160,105" />
-            </g>
-            <polygon points="0,140 0,70 20,70 40,105 80,105 100,70 140,70 160,105 200,105 220,70 260,70 280,105 320,105 340,70 380,70 400,105 440,105 460,70 480,70 480,140" />
-          </g>
+        <pattern id="div-b" width="350" height="86" patternUnits="userSpaceOnUse">
+          <use href="#div-shape" transform="scale(1,-1) translate(0,-86)" />
         </pattern>
       </defs>
     </svg>
