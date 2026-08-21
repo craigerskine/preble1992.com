@@ -6,4 +6,5 @@ married: ''
 nickname: Tom
 meta: ''
 email: ''
+photo: false
 ---

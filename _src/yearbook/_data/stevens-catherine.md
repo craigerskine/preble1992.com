@@ -6,4 +6,5 @@ married: McDermott
 nickname: ''
 meta: ''
 email: candcmcdermott@att.net
+photo: false
 ---

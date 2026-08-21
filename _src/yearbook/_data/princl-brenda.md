@@ -6,4 +6,5 @@ married: Kruzan
 nickname: ''
 meta: ''
 email: bkruzan@aol.com
+photo: false
 ---

@@ -6,4 +6,5 @@ married: ''
 nickname: ''
 meta: ''
 email: ''
+photo: false
 ---

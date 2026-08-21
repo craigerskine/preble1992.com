@@ -6,4 +6,5 @@ married: Laplant
 nickname: ''
 meta: ''
 email: ''
+photo: false
 ---

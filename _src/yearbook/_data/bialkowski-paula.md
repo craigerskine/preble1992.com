@@ -6,4 +6,5 @@ married: ''
 nickname: ''
 meta: Likes White Lion
 email: ''
+photo: false
 ---

@@ -24,6 +24,13 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
+  // collections
+  eleventyConfig.addCollection('studentsWithPhoto', (collectionApi) => {
+    return collectionApi
+      .getFilteredByTag('students')
+      .filter((item) => item.data.photo !== false);
+  });
+
   //{% renderTemplate "md" %}
   //# Blah{.text-center}
   //{% endrenderTemplate %}

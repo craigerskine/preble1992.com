@@ -6,4 +6,5 @@ married: Rieck
 nickname: ''
 meta: ''
 email: ''
+photo: false
 ---

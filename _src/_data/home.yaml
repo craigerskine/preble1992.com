@@ -12,19 +12,18 @@ mast:
 classmates:
   heading: Your classmates
   lead: |
-    Remember these goofy faces? Neither do we... mainly because most of the
-    photos are missing. Help us out and receive some FREE space bucks.
+    Remember these goofy faces? Oof, that hair. If your entry is missing [send us your photo](https://github.com/craigerskine/preble1992.com/tree/master/_src/_assets/img/people){ .text-pri-500 .underline } and receive some FREE space bucks. { .text-2xl .leading-normal }
   action: View all
 
 classmatesNav:
-  eraTabActive: 1
+  eraTabActive: 0
   eraTabs:
-    - era: Modern-ish
-      year: 2000's
     - era: High School
-      year: 1990's
-    - era: Middle School
-      year: 1980's
+      year: Then
+    - era: Modern-ish
+      year: Now
+    # - era: Middle School
+    #   year: 1980's
 
 details:
   heading: The schedule was packed with smart and creative activities

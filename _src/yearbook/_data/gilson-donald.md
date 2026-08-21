@@ -6,4 +6,5 @@ married: ''
 nickname: Don
 meta: ''
 email: ''
+photo: false
 ---
