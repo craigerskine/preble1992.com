@@ -30,6 +30,11 @@ export default function (eleventyConfig) {
       .getFilteredByTag('students')
       .filter((item) => item.data.photo !== false);
   });
+  eleventyConfig.addCollection('studentsNoPhoto', (collectionApi) => {
+    return collectionApi
+      .getFilteredByTag('students')
+      .filter((item) => item.data.photo === false);
+  });
 
   //{% renderTemplate "md" %}
   //# Blah{.text-center}

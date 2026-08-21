@@ -12,7 +12,7 @@ mast:
 classmates:
   heading: Your classmates
   lead: |
-    Remember these goofy faces? Oof, that hair. If your entry is missing [send us your photo](https://github.com/craigerskine/preble1992.com/tree/master/_src/_assets/img/people){ .text-pri-500 .underline } and receive some FREE space bucks. { .text-2xl .leading-normal }
+    Remember these goofy faces? Oof, that hair. If your entry is [missing](/yearbook/missing/){ .text-pri-500 .underline } send us your photo and receive some **FREE** space bucks. { .text-2xl .leading-normal .text-wrap-balance }
   action: View all
 
 classmatesNav:

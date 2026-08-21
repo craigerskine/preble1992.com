@@ -1,4 +1,4 @@
-{%- macro student(info=[],era=false) -%}
+{%- macro student(info=[],era=false,photo=true) -%}
 <figure class="mx-auto w-full max-w-[18.75rem] relative lg:max-w-none">
   <div class="w-full relative">
     <div class="ring-(2 inset sec-500/50) hidden absolute inset-0 transform translate-x-3 translate-y-3 rotate-2 rounded-3xl lg:(block)" aria-hidden="true"></div>
@@ -9,7 +9,7 @@
       {% if era %}
         :src="eraTabActive === 0 ? '{{ imgReal }}' : '{{ imgHolder }}'"
       {% else %}
-        src="{{ imgReal }}"
+        src="{{ imgReal if photo else imgHolder }}"
       {% endif %}
       alt="{{ info.data.first }} {{ info.data.last }} photo"
       class="w-full h-full max-h-[24rem] object-(center cover) relative rounded-xl md:(rounded-3xl)"
