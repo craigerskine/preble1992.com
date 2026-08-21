@@ -19,6 +19,7 @@
   - [x] Home
   - [x] Interior
   - [x] Error/404
+  - [ ] Public yearbook
   - [ ] News/Events System
   - [ ] Photo gallery
     - [ ] Photos from the Kane's Shutterfly archive
@@ -27,10 +28,9 @@
 
 ### Wishful thinking?
 
-- [ ] Possible Decap CMS?
-- [ ] Public yearbook
-  - [ ] Meta info (fun facts, where are they now, etc.)
-  - [ ] Gamification (badges/points applied to people that attend guitar night, etc.)
+- [ ] Possible CMS?
+- [ ] Meta info (fun facts, where are they now, etc.)
+- [ ] Gamification (badges/points applied to people that attend guitar night, etc.)
 
 ---
 

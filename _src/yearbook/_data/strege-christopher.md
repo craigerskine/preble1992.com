@@ -1,6 +1,6 @@
 ---
 last: Strege
-first: Christophe
+first: Christopher
 middle: Wayne
 married: ''
 nickname: ''

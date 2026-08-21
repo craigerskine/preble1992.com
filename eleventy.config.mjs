@@ -19,7 +19,7 @@ export default function (eleventyConfig) {
     '_src/_assets/_root': './',
   });
 
-  eleventyConfig.addWatchTarget('./_src/_app/_app.js');
+  eleventyConfig.addWatchTarget('./_src/_app.js');
 
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -90,7 +90,7 @@ export default function (eleventyConfig) {
   // esbuild
   eleventyConfig.on('eleventy.before', async () => {
     await esbuild.build({
-      entryPoints: ['_src/_app/_app.js'],
+      entryPoints: ['_src/_app.js'],
       outfile: 'public/_assets/js/_app.js',
       bundle: true,
       minify: true,
