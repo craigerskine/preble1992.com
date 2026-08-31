@@ -30,7 +30,7 @@ install({
 injectGlobal`
   @layer base {
     [x-cloak] { @apply hidden; }
-    h1,h2,h3,h4,h5,h6 { @apply font-bold; }
+    h1,h2,h3,h4,h5,h6 { @apply font-black; }
   }
 `
 

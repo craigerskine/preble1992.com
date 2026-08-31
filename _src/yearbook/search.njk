@@ -1,0 +1,19 @@
+---
+layout: false
+eleventyExcludeFromCollections: true
+permalink: '{{ page.filePathStem }}.json'
+---
+[
+{%- for item in collections.students | sort(false, false, 'data.last') %}
+  {
+    "last": "{{ item.data.last | safe }}",
+    "first": "{{ item.data.first | safe }}",
+    "middle": "{{ item.data.middle | safe }}",
+    "married": "{{ item.data.married | safe }}",
+    "nickname": "{{ item.data.nickname | safe }}",
+    "meta": "{{ item.data.meta | safe }}",
+    "email": "{{ item.data.email | safe }}",
+    "photo": {% if item.data.photo === false %}false{% else %}true{% endif %}
+  }{% if not loop.last %},{% endif %}
+{%- endfor %}
+]

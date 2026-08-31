@@ -1,25 +1,38 @@
-{%- macro student(info=[],era=false,photo=true) -%}
+{%- macro student(info=none, era=false, photo=true, alpine=false, item='person') -%}
+{%- set prefix = '/' | url -%}
+{%- set imgHolder = prefix ~ '_assets/img/people/_placeholder.svg' -%}
+{%- if not alpine -%}
+  {%- set imgReal = prefix ~ '_assets/img/people/' ~ (info.data.last | slugify) ~ '-' ~ (info.data.first | slugify) ~ '.jpg' -%}
+{%- endif -%}
 <figure class="mx-auto w-full max-w-[18.75rem] relative lg:max-w-none">
   <div class="w-full relative">
     <div class="ring-(2 inset sec-500/50) hidden absolute inset-0 transform translate-x-3 translate-y-3 rotate-2 rounded-3xl lg:(block)" aria-hidden="true"></div>
     <div class="ring-(2 inset sec-500/80) hidden absolute inset-0 transform -translate-x-2 -translate-y-2 -rotate-1 rounded-3xl lg:(block)" aria-hidden="true"></div>
-    {%- set imgReal = ('/' | url) ~ '_assets/img/people/' ~ (info.data.last | slugify) ~ '-' ~ (info.data.first | slugify) ~ '.jpg' -%}
-    {%- set imgHolder = ('/' | url) ~ '_assets/img/people/_placeholder.svg' -%}
     <img
-      {% if era %}
+      {%- if alpine %}
+        :src="photoSrc({{ item }}, {{ era | dump }}, '{{ imgHolder }}', '{{ prefix }}_assets/img/people/')"
+        :alt="{{ item }}.first + ' ' + {{ item }}.last + ' photo'"
+      {%- elif era %}
         :src="eraTabActive === 0 ? '{{ imgReal }}' : '{{ imgHolder }}'"
-      {% else %}
+        alt="{{ info.data.first }} {{ info.data.last }} photo"
+      {%- else %}
         src="{{ imgReal if photo else imgHolder }}"
-      {% endif %}
-      alt="{{ info.data.first }} {{ info.data.last }} photo"
+        alt="{{ info.data.first }} {{ info.data.last }} photo"
+      {%- endif %}
       class="w-full h-full max-h-[24rem] object-(center cover) relative rounded-xl md:(rounded-3xl)"
     />
   </div>
   <figcaption class="pt-4 md:pl-4">
-    <strong class="font-black block truncate md:text-lg">{{ info.data.first }} {{ info.data.last }}</strong>
-    <small class="text-sm truncate block opacity-60">{{ info.data.meta }}</small>
-    {#- <a href="https://github.com/craigerskine/preble1992.com/tree/main/_site/_assets/img/people" class="p-3 bg-sec-700 text-(sm white center) absolute inset-x-4 -top-4 rounded-lg shadow-xl transform -rotate-3" x-show="eraTabActive === 1" x-text="'Send us your photos...'"></a> -#}
+    {%- if alpine %}
+      <strong class="font-black block truncate md:text-lg">
+        <span x-text="{{ item }}.first"></span>
+        <span x-text="' ' + {{ item }}.last"></span>
+      </strong>
+      <small class="text-sm truncate block opacity-60" x-text="{{ item }}.meta"></small>
+    {%- else %}
+      <strong class="font-black block truncate md:text-lg">{{ info.data.first }} {{ info.data.last }}</strong>
+      <small class="text-sm truncate block opacity-60">{{ info.data.meta }}</small>
+    {%- endif %}
   </figcaption>
 </figure>
 {%- endmacro -%}
-<!-- <script src="https://unpkg.com/holder/holder.min.js"></script> -->

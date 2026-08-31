@@ -1,9 +1,6 @@
 ---
 title: 'Yearbook'
 layout: 'layouts/default.njk'
-pagination:
-  data: collections.studentsWithPhoto
-  size: 16
 ---
 
 {%- from 'components/heading.njk' import heading -%}
@@ -13,17 +10,30 @@ pagination:
 {%- set btnStyle -%}border-(& transparent) w-11 h-11 text-4xl flex items-center justify-center rounded-xl transition hover:(bg-pri-500/25 shadow){%- endset -%}
 
 {%- macro nav(param) -%}
-<nav class="ml-auto w-fit" aria-labelledby="yearbook-nav">
+<nav
+  class="
+    ml-auto
+    w-fit
+    flex
+    items-center
+    [&_.ico]:(text-xl block)
+    [&_.btn]:(border border-pri-500/25 w-8 aspect-square text-pri-700 text-sm items-center justify-center [font-variant-numeric:tabular-nums] disabled:(pointer-events-none opacity-50))
+    [&_.btn-active]:(bg-pri-600 text-white)
+    [&_.btn-ghost]:(border-transparent bg-transparent)
+  "
+  x-show="!isSearching && totalPages > 1"
+  aria-labelledby="yearbook-nav"
+>
   <p id="yearbook-nav" class="sr-only">{{ title }} navigation</p>
-  <ol class="text-3xl flex items-center justify-center gap-x-6">
-    {% if pagination.href.previous %}<li><a href="{{ pagination.href.previous | url }}" class="{{ ui.btn }} btn-ghost btn-square" title="Previous page"><iconify-icon icon="mdi:chevron-left" noobserver></iconify-icon></a></li>{% endif %}
-    <li class="text-sm opacity-60 [font-variant-numeric:tabular-nums]">{% if pagination.pageNumber %}Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}{% else %}{{ pagination.pages.length }} Pages{% endif %}</li>
-    {% if pagination.href.next %}<li><a href="{{ pagination.href.next | url }}" class="{{ ui.btn }} btn-ghost btn-square" title="Next page"><iconify-icon icon="mdi:chevron-right" noobserver></iconify-icon></a></li>{% endif %}
-  </ol>
+  <button type="button" @click="goToPage(currentPage - 1)" :disabled="currentPage === 1" aria-label="Previous" class="btn btn-ghost"><iconify-icon icon="mdi:chevron-left" class="ico" noobserver></iconify-icon></button>
+  <div class="-space-x-px [&_:nth-child(2)]:rounded-l-lg [&_:last-child]:rounded-r-lg">
+    <template x-for="p in pageNumbers" :key="p" hidden><button type="button" @click="goToPage(p)" x-text="p" class="btn hidden lg:inline-flex" :class="currentPage === p && 'btn-active'"></button></template>
+  </div>
+  <button type="button" @click="goToPage(currentPage + 1)" :disabled="currentPage === totalPages" aria-label="Next" class="btn btn-ghost"><iconify-icon icon="mdi:chevron-right" class="ico" noobserver></iconify-icon></button>
 </nav>
 {%- endmacro -%}
 
-<section x-data="{ eraTabActive: 1 }">
+<section x-data="yearbook">
   <div>{{ divider() }}</div>
   <article class="mx-auto py-8 px-4 bg-white relative lg:(py-24)">
     <div class="mx-auto max-w-7xl">
@@ -32,16 +42,166 @@ pagination:
           {% call heading({}) %}{{ title }}{% endcall %}
           {{ home.classmates.lead | md | safe }}
         </hgroup>
-        {{ nav() }}
       </div>
-      <ul class="grid-(& cols-2) gap-8 lg:(grid-cols-4 gap-20)">
-        {%- for person in pagination.items %}
-          <li class="w-full">
-            {{ student(info=person) }}
-          </li>
-        {%- endfor %}
-      </ul>
-      <div class="pt-12">{{ nav() }}</div>
+
+      <div x-ref="yearbook" class="pt-8">
+        <div class="pb-12 grid-(& flow-col) items-center justify-between">
+          <div>
+            <label
+              class="
+                border-(& pri-500/25)
+                px-4
+                w-fit
+                min-h-[2.75rem]
+                bg-transparent
+                text-current
+                flex
+                gap-1
+                placeholder:italic
+                [&:where([type=search],:has([type=search]))]:(rounded-full)
+                [&:has(:focus-visible)]:(outline-(& 2 current offset-2))
+                [&>input]:(m-0 p-0 w-full min-w-0 bg-transparent placeholder:italic focus-visible:(outline-none))
+              "
+            >
+              <input type="search" x-model="search" placeholder="Search…" autocomplete="off" class="{{ ui.input }}" />
+              <iconify-icon icon="mdi:magnify" class="text-xl self-center opacity-50" noobserver></iconify-icon>
+            </label>
+          </div>
+          {{ nav() }}
+        </div>
+  
+        <ul class="grid-(& cols-2) gap-8 lg:(grid-cols-4 gap-20)">
+          <template x-for="(person, i) in displayed" :key="person.last + '-' + person.first + '-' + i" hidden>
+            <li class="w-full">
+              {{ student(alpine=true) }}
+              {#- <strong>
+                <span x-text="person.first"></span>
+                <span x-show="person.middle" x-text="' ' + person.middle"></span>
+                <span x-text="' ' + person.last"></span>
+              </strong>
+              <template x-if="person.married" hidden><span> (<span x-text="person.married"></span>)</span></template> -#}
+              {#-
+                <template x-if="person.nickname" hidden><span> — aka <span x-text="person.nickname"></span></span></template>
+                <template x-if="person.meta" hidden><span> · <em x-text="person.meta"></em></span></template>
+                <template x-if="person.email" hidden><span> · <a :href="'mailto:' + person.email" x-text="person.email"></a></span></template>
+              -#}
+            </li>
+          </template>
+        </ul>
+        <p x-show="displayed.length === 0">No matches.</p>
+        <p x-show="loading">Loading…</p>
+        <p x-show="error" x-text="error"></p>
+        <div class="pt-12 grid-(& flow-col) items-center justify-between">
+          <p x-text="statusText" class="hidden md:block"></p>
+          {{ nav() }}
+        </div>
+      </div>
     </div>
   </article>
 </section>
+
+<script>
+  function slugify(str) {
+    return String(str || '')
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/[\s_-]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
+
+  function photoSrc(person, era, holder, dir) {
+    if (era && typeof eraTabActive !== 'undefined' && eraTabActive !== 0) return holder;
+    if (!person.photo) return holder;
+    return dir + slugify(person.last) + '-' + slugify(person.first) + '.jpg';
+  }
+
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('yearbook', function() {
+      return {
+        src: './search.json',
+        people: [],
+        perPage: 24,
+        search: '',
+        currentPage: 1,
+        loading: true,
+        error: '',
+
+        get isSearching() {
+          return this.search.trim().length > 0;
+        },
+
+        get filtered() {
+          const terms = this.search.trim().toLowerCase().split(/\s+/).filter(Boolean);
+          if (!terms.length) return this.people;
+          return this.people.filter((p) => {
+            const hay = [p.last, p.first, p.middle, p.married, p.nickname, p.meta, p.email]
+              .filter(Boolean)
+              .join(' ')
+              .toLowerCase();
+            return terms.every((t) => hay.includes(t));
+          });
+        },
+
+        get totalPages() {
+          if (this.isSearching) return 1;
+          return Math.max(1, Math.ceil(this.people.length / this.perPage));
+        },
+
+        get displayed() {
+          if (this.isSearching) return this.filtered;
+          const start = (this.currentPage - 1) * this.perPage;
+          return this.people.slice(start, start + this.perPage);
+        },
+
+        get pageNumbers() {
+          return Array.from({ length: this.totalPages }, (_, i) => i + 1);
+        },
+
+        get statusText() {
+          if (this.isSearching) {
+            return this.filtered.length + ' result' + (this.filtered.length === 1 ? '' : 's');
+          }
+          const start = (this.currentPage - 1) * this.perPage + 1;
+          const end = Math.min(this.currentPage * this.perPage, this.people.length);
+          return start + '–' + end + ' of ' + this.people.length;
+        },
+
+        goToPage(page) {
+          page = Math.max(1, Math.min(this.totalPages, Number(page) || 1));
+          this.currentPage = page;
+          this.writeHash();
+          this.$refs.yearbook.scrollIntoView({ block: 'start', behavior: 'smooth' });
+          //window.scrollTo({ top: 0, behavior: 'smooth' });
+        },
+
+        writeHash() {
+          const hash = this.currentPage > 1 ? '#page-' + this.currentPage : '';
+          history.replaceState(null, '', location.pathname + location.search + hash);
+        },
+
+        readHash() {
+          const m = location.hash.match(/page-(\d+)/i);
+          const page = m ? parseInt(m[1], 10) : 1;
+          this.currentPage = Math.max(1, Math.min(this.totalPages, page));
+        },
+
+        async init() {
+          try {
+            const res = await fetch(this.src);
+            if (!res.ok) throw new Error('Could not load ' + this.src + ' (' + res.status + ')');
+            const data = await res.json();
+            this.people = Array.isArray(data) ? data : [];
+          } catch (err) {
+            this.error = err.message || 'Failed to load people data';
+          } finally {
+            this.loading = false;
+          }
+
+          this.readHash();
+          window.addEventListener('hashchange', () => this.readHash());
+        },
+      }
+    });
+  });
+</script>

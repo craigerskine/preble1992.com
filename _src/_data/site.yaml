@@ -7,7 +7,14 @@ meta:
   separator: ' ⇢ '
 
 nav:
-  action: School store
+  - title: Yearbook
+    sub: Memories
+    ico: mdi:folder-image
+    url: /yearbook/
+  - title: School Store
+    sub: Donate / Merch
+    ico: mdi:storefront
+    url: /spirit/
 
 reunion:
   - anniversary: '30'
