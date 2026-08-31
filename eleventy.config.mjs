@@ -16,6 +16,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     '_src/_assets/files': '_assets/files',
     '_src/_assets/img': '_assets/img',
+    '_src/_assets/js': '_assets/js',
     '_src/_assets/_root': './',
   });
 

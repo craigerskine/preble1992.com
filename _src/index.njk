@@ -42,8 +42,8 @@ layout: 'layouts/default.njk'
         {%- endcall %}
         {{ home.classmates.lead | md | safe }}
       </hgroup>
-      <div class="pt-8 grid-(& cols-1) items-start gap-y-8 gap-x-8 sm:(gap-y-16) lg:(pt-16 grid-cols-4)" x-data="{{ home.classmatesNav | dump }}">
-        <div class="w-full flex">
+      <div class="pt-8 grid-(& cols-1) items-start gap-y-8 gap-x-8 sm:(gap-y-16) {#- lg:(pt-16 grid-cols-4) #}">
+        {#- <div class="w-full flex">
           <ul class="w-full flex-(& row) justify-center lg:(pr-8 flex-col justify-start)" role="tablist">
             <template x-for="(tab, index) in eraTabs">
               <li>
@@ -64,13 +64,13 @@ layout: 'layouts/default.njk'
               </li>
             </template>
           </ul>
-        </div>
-        <div class="lg:(col-span-3)">
+        </div> -#}
+        <div class="mx-auto max-w-5xl {#- lg:(col-span-3) #}">
           <ul class="grid-(& cols-2) gap-x-8 gap-y-10 sm:(gap-y-16) md:(grid-cols-3)">
             {%- for person in collections.students %}
               {%- if person.data.allowed %}
                 <li class="w-full">
-                  {{ student(info=person,era=true) }}
+                  {{ student(info=person) }}
                 </li>
               {%- endif %}
             {%- endfor %}

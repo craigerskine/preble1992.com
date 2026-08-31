@@ -1,13 +1,10 @@
 {%- macro student(info=none, era=false, photo=true, alpine=false, item='person') -%}
-{%- set prefix = '/' | url -%}
-{%- set imgHolder = prefix ~ '_assets/img/people/_placeholder.svg' -%}
-{%- if not alpine -%}
-  {%- set imgReal = prefix ~ '_assets/img/people/' ~ (info.data.last | slugify) ~ '-' ~ (info.data.first | slugify) ~ '.jpg' -%}
-{%- endif -%}
-<figure class="mx-auto w-full max-w-[18.75rem] relative lg:max-w-none">
-  <div class="w-full relative">
-    <div class="ring-(2 inset sec-500/50) hidden absolute inset-0 transform translate-x-3 translate-y-3 rotate-2 rounded-3xl lg:(block)" aria-hidden="true"></div>
-    <div class="ring-(2 inset sec-500/80) hidden absolute inset-0 transform -translate-x-2 -translate-y-2 -rotate-1 rounded-3xl lg:(block)" aria-hidden="true"></div>
+  {%- set prefix = '/' | url -%}
+  {%- set imgHolder = prefix ~ '_assets/img/people/_placeholder.svg' -%}
+  {%- if not alpine -%}
+    {%- set imgReal = prefix ~ '_assets/img/people/' ~ (info.data.last | slugify) ~ '-' ~ (info.data.first | slugify) ~ '.jpg' -%}
+  {%- endif -%}
+  {%- set pic -%}
     <img
       {%- if alpine %}
         :src="photoSrc({{ item }}, {{ era | dump }}, '{{ imgHolder }}', '{{ prefix }}_assets/img/people/')"
@@ -19,20 +16,31 @@
         src="{{ imgReal if photo else imgHolder }}"
         alt="{{ info.data.first }} {{ info.data.last }} photo"
       {%- endif %}
-      class="w-full h-full max-h-[24rem] object-(center cover) relative rounded-xl md:(rounded-3xl)"
+      class="w-full h-full max-h-[24rem] object-(center cover) rounded-xl md:(rounded-3xl)"
     />
-  </div>
-  <figcaption class="pt-4 md:pl-4">
-    {%- if alpine %}
-      <strong class="font-black block truncate md:text-lg">
-        <span x-text="{{ item }}.first"></span>
-        <span x-text="' ' + {{ item }}.last"></span>
-      </strong>
-      <small class="text-sm truncate block opacity-60" x-text="{{ item }}.meta"></small>
-    {%- else %}
-      <strong class="font-black block truncate md:text-lg">{{ info.data.first }} {{ info.data.last }}</strong>
-      <small class="text-sm truncate block opacity-60">{{ info.data.meta }}</small>
-    {%- endif %}
-  </figcaption>
-</figure>
+  {%- endset -%}
+  <figure class="mx-auto w-full max-w-[18.75rem] relative lg:max-w-none">
+    <div class="w-full relative">
+      <div class="ring-(2 inset sec-500/50) hidden absolute inset-0 pointer-events-none translate-x-3 translate-y-3 rotate-2 rounded-3xl lg:(block)" aria-hidden="true"></div>
+      <div class="ring-(2 inset sec-500/80) hidden absolute inset-0 pointer-events-none -translate-x-2 -translate-y-2 -rotate-1 rounded-3xl lg:(block)" aria-hidden="true"></div>
+      <div class="{# hover-gallery #}">
+        {{ pic | safe }}
+        {#- <img src="holder.js/400x560?size=1&text=TODO: 80s Pic&bg=666&fg=CCC&auto=yes" alt="Placeholder" class="w-full h-full max-h-[24rem] rounded-xl md:(rounded-3xl)" />
+        {{ pic | safe }}
+        <img src="holder.js/400x560?size=1&text=TODO: Modern Pic&bg=999&fg=CCC&auto=yes" alt="Placeholder" class="w-full h-full max-h-[24rem] rounded-xl md:(rounded-3xl)" /> -#}
+      </div>
+    </div>
+    <figcaption class="pt-4 md:pl-4">
+      {%- if alpine %}
+        <strong class="font-black block truncate md:text-lg">
+          <span x-text="{{ item }}.first"></span>
+          <span x-text="' ' + {{ item }}.last"></span>
+        </strong>
+        <small class="text-sm truncate block opacity-60" x-text="{{ item }}.meta"></small>
+      {%- else %}
+        <strong class="font-black block truncate md:text-lg">{{ info.data.first }} {{ info.data.last }}</strong>
+        <small class="text-sm truncate block opacity-60">{{ info.data.meta }}</small>
+      {%- endif %}
+    </figcaption>
+  </figure>
 {%- endmacro -%}
