@@ -76,8 +76,8 @@
               {%- for item in site.nav %}
                 <li>
                   <a href="{{ item.url | url }}" class="py-1 px-1.5 text-xs leading-tight font-semibold inline-flex items-center gap-2.5 rounded-lg transition hover:(bg-sec-500 text-sec-900) {{- ' bg-sec-500 text-sec-900' if item.url in page.url else ' text-sec-400' }} sm:(px-4 text-base leading-tight)">
-                    <iconify-icon icon="{{ item.ico }}" class="iconify text-2xl hidden shrink-0 opacity-50 sm:block" noobserver></iconify-icon>
-                    <span class="grow flex-(& col)">
+                    <iconify-icon icon="{{ item.ico }}" class="iconify text-2xl block shrink-0 sm:opacity-50" noobserver></iconify-icon>
+                    <span class="hidden grow sm:flex-(& col)">
                       {{ item.title }}
                       <small class="pt-px text-[.85em] font-normal block opacity-70">{{ item.sub }}</small>
                     </span>

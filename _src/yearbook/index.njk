@@ -1,6 +1,6 @@
 ---
-title: 'Yearbook'
-layout: 'layouts/default.njk'
+title: Yearbook
+layout: layouts/default.njk
 ---
 
 {%- from 'components/heading.njk' import heading -%}
@@ -17,8 +17,8 @@ layout: 'layouts/default.njk'
     flex
     items-center
     [&_.ico]:(text-xl block)
-    [&_.btn]:(border border-pri-500/25 w-8 aspect-square text-pri-700 text-sm items-center justify-center [font-variant-numeric:tabular-nums] disabled:(pointer-events-none opacity-50))
-    [&_.btn-active]:(bg-pri-600 text-white)
+    [&_.btn]:(w-8 aspect-square text-pri-700 text-sm items-center justify-center [font-variant-numeric:tabular-nums] rounded transition hover:bg-pri-500/25 disabled:(pointer-events-none opacity-50))
+    [&_.btn-active]:(bg-pri-600 text-white hover:bg-pri-500)
     [&_.btn-ghost]:(border-transparent bg-transparent)
   "
   x-show="!isSearching && totalPages > 1"
@@ -26,7 +26,7 @@ layout: 'layouts/default.njk'
 >
   <p id="yearbook-nav" class="sr-only">{{ title }} navigation</p>
   <button type="button" @click="goToPage(currentPage - 1)" :disabled="currentPage === 1" aria-label="Previous" class="btn btn-ghost"><iconify-icon icon="mdi:chevron-left" class="ico" noobserver></iconify-icon></button>
-  <div class="-space-x-px [&_:nth-child(2)]:rounded-l-lg [&_:last-child]:rounded-r-lg">
+  <div>
     <template x-for="p in pageNumbers" :key="p" hidden><button type="button" @click="goToPage(p)" x-text="p" class="btn hidden lg:inline-flex" :class="currentPage === p && 'btn-active'"></button></template>
   </div>
   <button type="button" @click="goToPage(currentPage + 1)" :disabled="currentPage === totalPages" aria-label="Next" class="btn btn-ghost"><iconify-icon icon="mdi:chevron-right" class="ico" noobserver></iconify-icon></button>
