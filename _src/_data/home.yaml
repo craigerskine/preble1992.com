@@ -14,7 +14,9 @@ classmates:
   lead: |
     Remember these goofy faces? Oof, that hair.
     If your entry is [missing](/yearbook/missing/){ .text-pri-500 .underline }
-    send us your photo and receive some **FREE** space bucks*. { .text-2xl .leading-normal .text-wrap-balance }
+    send us your photo and receive some **FREE** space bucks^*^{ .opacity-60 }! { .text-2xl .leading-normal .text-wrap-balance }
+
+    *There is no such thing as space bucks { .mt-3 .text-xs .opacity-60 }
   action: View All
 
 classmatesNav:

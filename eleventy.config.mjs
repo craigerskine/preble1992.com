@@ -3,6 +3,7 @@ import eleventyNavigationPlugin from '@11ty/eleventy-navigation';
 import esbuild from 'esbuild';
 import markdownIt from 'markdown-it';
 import markdownItAttrs from 'markdown-it-attrs';
+import markdownItSup from 'markdown-it-sup';
 import yaml from 'js-yaml';
 
 export default function (eleventyConfig) {
@@ -40,7 +41,7 @@ export default function (eleventyConfig) {
   //{% renderTemplate "md" %}
   //# Blah{.text-center}
   //{% endrenderTemplate %}
-  let markdownLibrary = markdownIt().disable('code').use(markdownItAttrs);
+  let markdownLibrary = markdownIt().disable('code').use(markdownItAttrs).use(markdownItSup);
   eleventyConfig.setLibrary('md', markdownLibrary);
 
   eleventyConfig.addDataExtension('yaml', (contents) => yaml.load(contents));
